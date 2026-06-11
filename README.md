@@ -2,20 +2,25 @@
 # Lớp: K58KTP
 # MÔN HỌC: PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - TEE0419
 
-BÀI TẬP LỚN:
-1. Viết phần mềm trên công cụ Mit App inventor
+# BÀI TẬP LỚN:
+
+# Phần 1. Viết phần mềm trên công cụ Mit App inventor
+
    (tập trung vào quy trình tạo ra phần mềm)
+   
    app có 3 screen:
+   
    + about về bản thân+nút gọi sang 2 screen còn lại
    + giải 1 bài toán đơn giản
    + sử dụng webview: hiển thị 1 trang web có sẵn, hỗ trợ giao diện điện thoại
+
    mô tả: thanh công cụ có gì? kéo thả + thay đổi thuộc tính: làm ntn, để làm gì?
-          block: mô tả bản chất việc kéo thả block ntn?
+   
+   block: mô tả bản chất việc kéo thả block ntn?
                  ưu điểm gì so với viết code? nhược điểm?
                  copy paste block ? (backpack)
-
-BÀI LÀM
-
+     
+# BÀI LÀM
 
 ## 1. Bài toán cần giải quyết
 
@@ -691,6 +696,106 @@ Cách sử dụng:
 - Bước 5: Kéo Blocks từ Backpack ra vùng làm việc
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1b635c7-13ab-4461-b421-481e6ba21df1" />
+
+
+
+
+
+
+
+
+# Phần 2. Viết app sử dụng Android Studio
+
+1. Tạo Project Android Studio
+
+Bước 1.1. Mở Android Studio
+
+Mở Android Studio.
+
+Nếu đang ở màn hình chào mừng, bấm:
+
+New Project
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/d17d7e37-739c-4123-b5a3-4eea11bc05d8" />
+
+
+Bước 1.2. Chọn mẫu Project
+
+Trong danh sách mẫu, chọn:
+
+Phone and Tablet → Empty Views Activity
+
+Sau đó bấm: Next
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/469019db-344c-42c0-b834-184770de8e23" />
+
+Empty Views Activity:	Dùng Java và file giao diện XML
+
+Bước 1.3. Điền thông tin Project
+
+Điền các giá trị sau:
+
+| Mục | Giá trị |
+|------|----------|
+| Name | BMI Calculator |
+| Package name | com.example.bmicalculator |
+| Save location | Chọn thư mục bạn dễ tìm, ví dụ D:\AndroidProjects\BMICalculator |
+| Language | Java |
+| Minimum SDK | API 24: Android 7.0 |
+
+Sau đó bấm: Finish
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4624d80f-56af-40e1-a74b-2535aaba2350" />
+
+Chờ Android Studio tải và đồng bộ Project.
+
+Bước 1.4. Kiểm tra Project đã tạo thành công
+
+Ở cột bên trái, chọn chế độ hiển thị:
+
+Android
+
+Sau đó mở cây thư mục:
+```
+app
+├── manifests
+│   └── AndroidManifest.xml
+├── java
+│   └── com.example.bmicalculator
+│       └── MainActivity.java
+└── res
+    ├── layout
+    │   └── activity_main.xml
+    └── values
+        ├── colors.xml
+        ├── strings.xml
+        └── themes.xml
+```
+Thấy MainActivity.java và activity_main.xml, đã tạo Project đúng.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0483f7ee-4ccb-4b5f-91af-08c29b8ab7e3" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
