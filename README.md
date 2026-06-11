@@ -451,19 +451,155 @@ Với yêu cầu cơ bản,không cần tạo Block cho WebViewer1, vì trang we
 
 ## 5. Kiểm tra ứng dụng
 
-Có thể chạy thử bằng MIT AI2 Companion.
+Chạy thử bằng MIT AI2 Companion.
 
-Thử các dữ liệu sau:
+### 5.1. Cài ứng dụng trên điện thoại
 
-Cân nặng	Chiều cao	Kết quả mong đợi
-Để trống	Để trống	Hiện thông báo yêu cầu nhập dữ liệu
-0	1.7	Hiện thông báo giá trị phải lớn hơn 0
-45	1.7	Thiếu cân
-60	1.7	Cân nặng hợp lý
-80	1.7	Thừa cân
-100	1.7	Béo phì
+Trên điện thoại Android, mở CH Play và tìm: ```MIT AI2 Companion```
+
+Sau đó cài đặt ứng dụng.
+
+### 5.2. Kết nối điện thoại và máy tính cùng mạng Wi-Fi
+
+- Điện thoại và máy tính đang mở MIT App Inventor phải dùng cùng một mạng Wi-Fi.
+
+- Vì hai thiết bị khác mạng có thể không kết nối được.
+
+### 5.3. Mở mã QR trên máy tính
+
+Trong trang MIT App Inventor của bạn, trên thanh công cụ phía trên.
+
+Bấm: ```Connect```
+
+Sau đó chọn: ```AI Companion```
+
+Một cửa sổ sẽ xuất hiện, trong đó có:
+
+- Mã QR
+- Mã gồm 6 ký tự
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2a9c7bc-c06a-4067-b78a-d975876b8a0a" />
+
+### 5.4. Quét mã QR bằng điện thoại
+
+Mở ứng dụng: ```MIT AI2 Companion``
+
+trên điện thoại.
+
+Chọn: ```Scan QR code```
+
+Sau đó đưa camera điện thoại quét mã QR đang hiển thị trên máy tính.
+
+<img width="1253" height="2529" alt="image" src="https://github.com/user-attachments/assets/941b37cb-ba07-41a0-9f52-d90b54fe7a2b" />
+
+### 5.5. Kiểm tra
+
+#### 5.5.1. Kiểm tra màn hình chính
+
+Khi app mở, xuất hiện:
+
+- Tiêu đề ứng dụng
+- Thông tin sinh viên
+- Nút TÍNH CHỈ SỐ BMI
+- Nút XEM THÔNG TIN THAM KHẢO
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/a22405e8-9907-4abc-a9ef-fdb111bb0711" />
+
+Bấm:
+```
+TÍNH CHỈ SỐ BMI
+```
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/3698af98-751e-42fc-80fa-4bd76a35fb9c" />
+
+#### 5.5.2. Kiểm tra trường hợp để trống
+
+Không nhập gì, bấm:
+```
+TÍNH BMI
+```
+Kết quả:
+
+Vui lòng nhập đầy đủ cân nặng và chiều cao
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/2576c07e-9cba-476f-9eb9-a6f19dd8c9c3" />
+
+### 5.5.3. Kiểm tra dữ liệu bằng 0
+
+Nhập:
+
+Cân nặng: 0
+Chiều cao: 1.7
+
+Bấm:
+```
+TÍNH BMI
+```
+Kết quả:
+
+Cân nặng và chiều cao phải lớn hơn 0
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/3b3a51f9-deb5-4565-9d4f-71217bf17a55" />
+
+#### 5.5.4. Kiểm tra tính BMI bình thường
+
+Nhập:
+```
+Cân nặng: 60
+Chiều cao: 1.7
+```
+Bấm:
+```
+TÍNH BMI
+```
+Kết quả:
+
+- Chỉ số BMI của bạn: khoảng 20.76
+- Kết luận: Cân nặng hợp lý
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/f2c58230-a4b7-4a64-b07b-b8f8cd3553d7" />
+
+#### 5.5.5. Kiểm tra nút LÀM MỚI
+
+Sau khi có kết quả, bấm:
+```
+LÀM MỚI
+```
+Kết quả:
+
+- Hai ô nhập bị xóa
+- Kết quả BMI bị xóa
+- Kết luận bị xóa
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/65b5d105-4d34-44c0-b99c-11f41f44917c" />
+
+#### 5.5.6. Kiểm tra nút QUAY LẠI
+
+Bấm:
+```
+QUAY LẠI
+```
+Ứng dụng phải quay về Screen1.
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/88bee774-1f1e-418c-bed0-2332475c8adc" />
 
 
+#### 5.5.7. Kiểm tra WebView
+
+Từ Screen1, bấm:
+```
+XEM THÔNG TIN THAM KHẢO
+```
+Ứng dụng phải chuyển sang ScreenWebView và hiển thị trang web bạn đã nhập trong HomeUrl.
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/9c048408-2f9b-4023-9d56-86a4f429873d" />
+
+Sau đó bấm:
+```
+QUAY LẠI
+```
+Ứng dụng phải trở về Screen1.
+
+<img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/08b2ba6b-663f-41e5-89b6-f5d551c7fbd8" />
 
 
 
