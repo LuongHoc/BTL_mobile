@@ -1992,9 +1992,9 @@ XEM THÔNG TIN THAM KHẢO
 
 ***Giao diện XEM THÔNG TIN THAM KHẢO***
 
-### 10.3. Kiểm tra màn hình tính BMI
+## 10.3. Kiểm tra màn hình tính BMI
 
-#### 10.3.1. Trường hợp bỏ trống dữ liệu
+### 10.3.1. Trường hợp bỏ trống dữ liệu
 
 Không nhập dữ liệu và bấm:
 
@@ -2010,7 +2010,7 @@ Vui lòng nhập đầy đủ cân nặng và chiều cao
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed044d97-a719-4f71-a01d-be36997459d4" />
 
-#### 10.3.2. Trường hợp nhập giá trị bằng `0`
+### 10.3.2. Trường hợp nhập giá trị bằng `0`
 
 Nhập:
 
@@ -2027,7 +2027,7 @@ Cân nặng và chiều cao phải lớn hơn 0
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/810d5f66-095e-45d9-ba85-a0157ad6a3f0" />
 
 
-#### 10.3.3. Trường hợp dữ liệu hợp lệ
+### 10.3.3. Trường hợp dữ liệu hợp lệ
 
 Nhập:
 
