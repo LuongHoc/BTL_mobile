@@ -1322,6 +1322,12 @@ Chuyển sang chế độ viết XML bằng biểu tượng ba dòng ngang ở g
 
 Nhấn: ```Ctrl + S```
 
+**Xem giao diện**
+
+Bấm biểu tượng Design hoặc Split ở góc trên bên phải.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3580990a-ad24-431a-b31d-273a51d6e040" />
+
 ## 7.2. Viết code xử lý BMI
 
 ### 7.2.1. Công thức BMI
@@ -1730,6 +1736,16 @@ Dán toàn bộ đoạn sau:
 
 Nhấn: ```Ctrl + S```
 
+**Kiểm tra giao diện WebView**
+
+Chuyển sang chế độ:
+```
+Design hoặc Split
+```
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/708ec5e7-db42-4464-80f1-5b71404a051a" />
+
 ## 8.2. Viết code `WebViewActivity.java`
 
 ### 8.2.1. URL truy cập
@@ -1927,327 +1943,199 @@ Giữ nguyên cấu hình mặc định và bấm: ```Finish```
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/938bdc40-5da5-4add-82e0-98f56e4a24e8" />
 
+# 10. Kiểm tra chức năng
 
+## 10.1. Run
 
+Chọn điện thoại ảo vừa tạo:
 
+```
+Pixel 6 API 36
+```
 
+Bấm Run
 
+- Bấm biểu tượng tam giác màu xanh: ▶
 
-## 10. Kiểm tra lỗi sau khi dán code
+- Hoặc nhấn: ```Shift + F10```
 
-Sau khi lưu, quan sát file MainActivity.java.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/871c3fe1-632f-4f1d-977e-309978c0ae83" />
 
-Nếu không có chữ màu đỏ hoặc gạch chân đỏ thì code đã hợp lệ.
 
-Bạn cũng có thể chọn:
+## 10.2. Kiểm tra màn hình chính
 
-Build
+### 10.2.1. Nội dung hiển thị
 
+Màn hình chính hiển thị:
 
-hoặc dùng phím tắt:
-
-Ctrl + F9
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/97c89a7b-e141-4429-8300-ef2debba12d6" />
-
-Hiện ```Build MOBILE: finished```
-
-Điều đó nghĩa là Project hiện tại không có lỗi làm hỏng quá trình build.
-
-
-
-11. Xem trước giao diện
-
-Bấm biểu tượng Design hoặc Split ở góc trên bên phải.
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3580990a-ad24-431a-b31d-273a51d6e040" />
-
-
-Hai vùng:
-
-tvResult
-tvEvaluation
-
-ban đầu để trống nên bạn chưa nhìn thấy chữ. Sau này code Java sẽ đưa kết quả vào hai vị trí này.
-
-12. Ý nghĩa các thành phần quan trọng
-Thành phần	ID	Mục đích
-EditText	edtWeight	Nhập cân nặng
-EditText	edtHeight	Nhập chiều cao
-Button	btnCalculate	Tính BMI
-Button	btnReset	Xóa dữ liệu cũ
-TextView	tvResult	Hiển thị chỉ số BMI
-TextView	tvEvaluation	Hiển thị kết luận
-Button	btnBack	Quay về màn hình trước
-
-TextView dùng để hiển thị văn bản, còn EditText dùng để nhận nội dung người dùng nhập vào.
-
-
-
-
-
-
-
-
-
-19. Dữ liệu được gửi lên API
-
-Khi người dùng nhập:
-
-Cân nặng: 60
-Chiều cao: 1.7
-
-ứng dụng sẽ gửi JSON gần giống:
-
-{
-  "app_by": "K225480106025",
-  "input": {
-    "weight": 60,
-    "height": 1.7,
-    "name": "BMI Calculator"
-  },
-  "output": {
-    "ketluan": "Kết luận: Cân nặng hợp lý",
-    "bmi": 20.76
-  }
-}
-
-Nếu API nhận dữ liệu thành công, ứng dụng sẽ hiện thông báo gần giống:
-
-Đã gửi API thành công. STT: 1234
-20. Build lại Project
-
-Nhấn:
-
-Ctrl + F9
-
-Kết quả mong đợi:
-
-BUILD SUCCESSFUL
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cd6eebe-9f45-4bd2-af3c-75176694b984" />
-
-
-
-23. Kiểm tra giao diện WebView
-
-Chuyển sang chế độ:
-
-Design
-
-hoặc:
-
-Split
-
-Giao diện cần có bố cục:
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/708ec5e7-db42-4464-80f1-5b71404a051a" />
-
-TRANG THÔNG TIN THAM KHẢO
-
-┌──────────────────────────┐
-│                          │
-│         WebView          │
-│                          │
-│                          │
-└──────────────────────────┘
-
-[        TẢI LẠI TRANG       ]
-
-[           QUAY LẠI         ]
-
-Trong màn hình thiết kế, vùng WebView có thể chỉ hiển thị một khung trống. Điều này là bình thường. Trang web chỉ được tải khi chạy ứng dụng.
-
-Ý nghĩa của layout_weight
-
-Trong XML có đoạn:
-
-android:layout_height="0dp"
-android:layout_weight="1"
-
-Hai thuộc tính này giúp WebView chiếm toàn bộ khoảng trống còn lại trên màn hình, nhưng vẫn dành chỗ cho hai nút bên dưới.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29. Chạy ứng dụng
-Bước 29.1. Chọn thiết bị
-
-Trên thanh công cụ phía trên Android Studio, bấm vào:
-
-No Devices
-
-Chọn điện thoại ảo vừa tạo, ví dụ:
-
-Pixel 6 API 35
-Bước 29.2. Kiểm tra cấu hình chạy
-
-Ngay bên phải danh sách thiết bị, bảo đảm đang chọn:
-
-app
-Bước 29.3. Bấm Run
-
-Bấm biểu tượng tam giác màu xanh:
-
-▶
-
-hoặc nhấn:
-
-Shift + F10
-
-Android Studio sẽ:
-
-Khởi động điện thoại ảo
-→ Build ứng dụng
-→ Cài APK vào điện thoại ảo
-→ Mở MainActivity
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ef95e555-15cc-4498-9c4f-98c7e6c28af3" />
-
-Lần đầu khởi động Emulator có thể chậm hơn các lần sau. Android Emulator được tích hợp cùng Android Studio và dùng để kiểm tra ứng dụng trên thiết bị ảo.
-
-30. Kiểm tra từng chức năng
-Trường hợp 1. Màn hình chính
-
-Sau khi app mở, bạn cần thấy:
-
+```text
 ỨNG DỤNG TÍNH CHỈ SỐ BMI
 Sinh viên: Lương Văn Học
 Mã sinh viên: K225480106025
+```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/152befe5-d35a-4d31-8ebf-ff4f449588e3" />
 
-[ TÍNH CHỈ SỐ BMI ]
-[ XEM THÔNG TIN THAM KHẢO ]
-Trường hợp 2. Chuyển sang màn hình tính BMI
+#### 10.1.2. Kiểm tra nút điều hướng
 
-Bấm:
+Hai nút:
 
+```text
 TÍNH CHỈ SỐ BMI
+XEM THÔNG TIN THAM KHẢO
+```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4e85a411-019e-444c-85a5-5b43fd1a06c1" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/94249fe3-b89d-4711-a025-fcd58c1948f9" />
 
-Ứng dụng phải mở BmiActivity.
+***Giao diện TÍNH CHỈ SỐ BMI***
 
-Trường hợp 3. Kiểm tra bỏ trống dữ liệu
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1cea9ea1-bb99-4712-8748-5779e5b33448" />
 
-Không nhập gì và bấm:
+***Giao diện XEM THÔNG TIN THAM KHẢO***
 
+### 10.2. Kiểm tra màn hình tính BMI
+
+#### 10.2.1. Trường hợp bỏ trống dữ liệu
+
+Không nhập dữ liệu và bấm:
+
+```text
 TÍNH BMI
+```
 
-Kết quả mong đợi:
+Kết quả:
 
+```text
 Vui lòng nhập đầy đủ cân nặng và chiều cao
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3e7e752e-ae9a-4a81-aa81-8eb82ce780e0" />
+```
 
-Trường hợp 4. Kiểm tra dữ liệu bằng 0
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed044d97-a719-4f71-a01d-be36997459d4" />
+
+#### 10.2.2. Trường hợp nhập giá trị bằng `0`
 
 Nhập:
 
+```text
 Cân nặng: 0
 Chiều cao: 1.7
+```
 
-Bấm:
+Kết quả:
 
-TÍNH BMI
-
-Kết quả mong đợi:
-
+```text
 Cân nặng và chiều cao phải lớn hơn 0
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a51edfcc-ca7d-4dd9-a69e-032df6bdd525" />
+```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/810d5f66-095e-45d9-ba85-a0157ad6a3f0" />
 
-Trường hợp 5. Tính BMI hợp lệ
+
+#### 10.2.3. Trường hợp dữ liệu hợp lệ
 
 Nhập:
 
+```text
 Cân nặng: 60
 Chiều cao: 1.7
+```
 
-Bấm:
+Kết quả:
 
-TÍNH BMI
-
-Kết quả mong đợi:
-
+```text
 Chỉ số BMI của bạn: 20.76
 Kết luận: Cân nặng hợp lý
+```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3a9adea8-73cc-43da-bdd3-dd0423ab2010" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8bfba984-4135-4689-9caa-d9eff897e11b" />
+
+## 10.3. Kiểm tra gửi API
+### 10.3.1. Thông báo gửi thành công
+
+Sau khi tính BMI, ứng dụng hiển thị:
+
+```text
+Đã gửi kết quả lên API
+```
+<img width="1578" height="894" alt="image" src="https://github.com/user-attachments/assets/60d667d3-79cc-47f7-839f-9bc379279867" />
+
+### 10.3.2. Kiểm tra JSON LOG
+
+Trang log hiển thị dữ liệu có:
+
+```text
+app_by = K225480106025
+```
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c224d7bd-2145-444f-943b-05cbd504669b" />
 
 
-Nếu kết nối mạng và API hoạt động bình thường, ứng dụng sẽ hiện thêm thông báo gần giống:
+## 10.4. Kiểm tra nút làm mới và quay lại
 
-Đã gửi API thành công. STT: 1234
-
-Số STT thực tế có thể khác.
-
-Trường hợp 6. Làm mới
+### 10.4.1. Nút làm mới
 
 Bấm:
 
+```text
 LÀM MỚI
+```
 
-Hai ô nhập và kết quả cũ phải được xóa.
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9fe699eb-abc5-4a0c-a9ee-98892d88770c" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5e205d43-e706-4a9b-8c2f-9f94e387e790" />
 
+***Hai ô nhập và kết quả cũ được xóa.***
 
-Trường hợp 7. Quay lại
+### 10.4.2. Nút quay lại
 
 Bấm:
 
+```text
 QUAY LẠI
+```
 
-Ứng dụng phải trở về màn hình chính.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43ed5a66-175d-42da-8603-9393074b5feb" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9fe4e049-f073-47bd-abf7-8c96e32bae19" />
+***Ứng dụng trở về màn hình chính.***
 
 
-Trường hợp 8. Kiểm tra WebView
+## 10.5. Kiểm tra WebView
+
+### 10.5.1. Mở trang tham khảo
 
 Từ màn hình chính, bấm:
 
+```text
 XEM THÔNG TIN THAM KHẢO
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2330d4f3-427b-4b6d-bf8f-cd9b217d8b63" />
+```
 
-WebViewActivity phải mở trang:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c59e99ac-db5a-4235-89b1-c81c097c2275" />
 
-https://k58kmt.tdh.io.vn?masv=K225480106025
 
-Sau đó kiểm tra:
+### 10.5.3. Kiểm tra SV LOG
 
-TẢI LẠI TRANG
-QUAY LẠI
+Sau khi WebView tải trang, số lượt truy cập trong `SV LOG` tăng lên.
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4834a30b-eb5a-4140-b046-b6220798df7e" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8433805c-39aa-49cf-941d-7c78728e9a36" />
 
-31. Nếu không muốn dùng điện thoại ảo
 
-Bạn cũng có thể dùng điện thoại Android thật.
 
-Trên điện thoại, bật:
 
-Cài đặt
-→ Giới thiệu điện thoại
-→ bấm nhiều lần vào Số bản dựng
-→ mở Tùy chọn nhà phát triển
-→ bật Gỡ lỗi USB
 
-Sau đó nối điện thoại với máy tính bằng cáp USB và chấp nhận hộp thoại cho phép gỡ lỗi trên điện thoại. Android Studio có thể chạy và debug ứng dụng trên thiết bị thật thông qua kết nối ADB.
 
-Khi thiết bị xuất hiện thay cho dòng:
 
-No Devices
 
-chọn điện thoại và bấm:
 
-▶ Run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
