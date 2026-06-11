@@ -373,38 +373,95 @@ Các nhóm Blocks cần sử dụng
 | Notifier1   | call Notifier1.ShowAlert                  |
 
 
-
-
-4.4. Tạo Block cho nút LÀM MỚI
+### 3.4. Tạo Block cho nút LÀM MỚI
 
 Chọn:
-
+```
 btnLamMoi
-
+```
 Tạo:
-
+```
 when btnLamMoi.Click
     set txtCanNang.Text to ""
     set txtChieuCao.Text to ""
     set lblKetQua.Text to ""
     set lblDanhGia.Text to ""
     set global bmi to 0
-4.5. Tạo Block cho nút QUAY LẠI
+```
+
+### 3.5. Tạo Block cho nút QUAY LẠI
 
 Chọn:
-
+```
 btnQuayLai
-
+```
 Tạo:
-
+```
 when btnQuayLai.Click
     close screen
+```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb5c370-7f04-45e1-abea-2edce2a4d8ec" />
 
 
+## 4. Làm ScreenWebView: Hiển thị trang web
+Chuyển sang: ```ScreenWebView```
+
+### 5.1. Thiết kế giao diện
+
+Chọn ScreenWebView, chỉnh:
+
+| Thuộc tính | Giá trị |
+|------------|----------|
+| Title | Thông tin tham khảo |
+| AlignHorizontal | Center |
 
 
+Kéo các thành phần:
 
+| Thành phần | Đổi tên | Nội dung hoặc thiết lập |
+|------------|----------|-------------------------|
+| Label | lblTieuDe | THÔNG TIN THAM KHẢO VỀ BMI |
+| Button | btnQuayLai | QUAY LẠI |
+| WebViewer | WebViewer1 | Width = Fill parent, Height = Fill parent |
 
+Trong thuộc tính HomeUrl
+
+nhập:
+
+```
+https://www.cdc.gov/bmi/adult-calculator/index.html
+```
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/890459bb-fe8c-4a7a-bf20-8e7b5a991025" />
+
+WebViewer là thành phần dùng để hiển thị trang web trong ứng dụng. Thuộc tính HomeUrl xác định trang được mở ban đầu. Tuy nhiên, WebViewer không phải một trình duyệt đầy đủ như Chrome. 
+
+### 4.2. Tạo Block quay lại
+
+Chuyển sang tab Blocks và tạo:
+
+```
+when btnQuayLai.Click
+    close screen
+```
+Với yêu cầu cơ bản,không cần tạo Block cho WebViewer1, vì trang web sẽ tự mở theo giá trị HomeUrl.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d40dd2c-d71e-4c85-a61b-e69b1e8d3dba" />
+
+## 5. Kiểm tra ứng dụng
+
+Có thể chạy thử bằng MIT AI2 Companion.
+
+Thử các dữ liệu sau:
+
+Cân nặng	Chiều cao	Kết quả mong đợi
+Để trống	Để trống	Hiện thông báo yêu cầu nhập dữ liệu
+0	1.7	Hiện thông báo giá trị phải lớn hơn 0
+45	1.7	Thiếu cân
+60	1.7	Cân nặng hợp lý
+80	1.7	Thừa cân
+100	1.7	Béo phì
 
 
 
