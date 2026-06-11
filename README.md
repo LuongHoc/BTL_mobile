@@ -202,24 +202,6 @@ Kéo các thành phần sau vào trong VA_Main:
 | Notifier   | Notifier1       | Thành phần ẩn dùng để hiện thông báo  |
 
 
-Cây thành phần:
-
-ScreenTinhBMI
-└── VA_Main
-    ├── lblTieuDe
-    ├── lblNhapCanNang
-    ├── txtCanNang
-    ├── lblNhapChieuCao
-    ├── txtChieuCao
-    ├── btnTinh
-    ├── btnLamMoi
-    ├── lblKetQua
-    ├── lblDanhGia
-    └── btnQuayLai
-
-Non-visible components
-└── Notifier1
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c8c7013c-4cbe-4f96-a22c-bf34f2457c83" />
 
 ### 3.2. Tạo biến lưu BMI
