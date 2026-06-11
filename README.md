@@ -1122,6 +1122,7 @@ app → res → layout → activity_main.xml
 
 </LinearLayout>
 ```
+Nhấn: ```Ctrl + S```
 
 ### 6.1.4 Kiểm tra giao diện
 
@@ -1186,184 +1187,36 @@ Nhấn: ```Ctrl + S``` để lưu file.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a5befad-09bf-4549-9fa9-ebc7d45bc64b" />
 
 
+# 7. Xây dựng `BmiActivity`
 
+## 7.1. Thiết kế giao diện `activity_bmi.xml`
 
-# 5. Khai báo tài nguyên chuỗi trong strings.xml
+### 7.1.1. Thành phần giao diện
 
+Màn hình gồm:
 
+- Ô nhập cân nặng.
+- Ô nhập chiều cao.
+- Nút tính BMI.
+- Nút làm mới.
+- Vùng hiển thị BMI.
+- Vùng hiển thị kết luận.
+- Nút quay lại.
 
-Sửa lại activity_main.xml
-Bước 4. Mở lại file giao diện
+### 7.1.2. Nội dung file XML
 
-Bấm:
-
-app
-→ res
-→ layout
-→ activity_main.xml
-
-Chuyển sang chế độ Code.
-
-Bước 5. Thay các nội dung hardcode
-
-Nội dung đầy đủ của activity_main.xml nên có dạng:
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/main_title"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/main_description"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <TextView
-        android:id="@+id/tvStudent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/student_info"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
-
-    <Button
-        android:id="@+id/btnOpenBmi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_open_bmi"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:id="@+id/btnOpenWebView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_open_web_view" />
-
-</LinearLayout>
-```
-Nhấn:
-
-Ctrl + S
-
-
-## 10. Kiểm tra lỗi sau khi dán code
-
-Sau khi lưu, quan sát file MainActivity.java.
-
-Nếu không có chữ màu đỏ hoặc gạch chân đỏ thì code đã hợp lệ.
-
-Bạn cũng có thể chọn:
-
-Build
-
-
-hoặc dùng phím tắt:
-
-Ctrl + F9
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/97c89a7b-e141-4429-8300-ef2debba12d6" />
-
-Hiện ```Build MOBILE: finished```
-
-Điều đó nghĩa là Project hiện tại không có lỗi làm hỏng quá trình build.
-
-
-## 10. Thiết kế giao diện activity_bmi.xml
-
-Giao diện gồm:
-
-Tiêu đề
-Ô nhập cân nặng
-Ô nhập chiều cao
-Nút TÍNH BMI
-Nút LÀM MỚI
-Vùng hiển thị kết quả
-Vùng hiển thị đánh giá
-Nút QUAY LẠI
-
-Ta sử dụng LinearLayout với orientation="vertical" để sắp xếp các thành phần theo chiều dọc. EditText được khai báo inputType="numberDecimal" để phù hợp với dữ liệu số có phần thập phân như chiều cao 1.7.
-
-Bước 10.1. Bổ sung nội dung vào strings.xml
-
-Mở:
-
-app
-→ res
-→ values
-→ strings.xml
-
-Giữ lại các dòng đã có và thêm nội dung mới vào bên trong cặp thẻ:
-
-<resources>
-...
-</resources>
-
-Bạn có thể thay toàn bộ file bằng đoạn hoàn chỉnh sau:
-```
-<resources>
-    <string name="app_name">BMI Calculator</string>
-
-    <!-- Nội dung màn hình chính -->
-    <string name="main_title">ỨNG DỤNG TÍNH CHỈ SỐ BMI</string>
-    <string name="main_description">Ứng dụng hỗ trợ tính BMI dựa trên cân nặng và chiều cao.</string>
-    <string name="student_info">Sinh viên: Lương Văn Học\nMã sinh viên: K225480106025</string>
-    <string name="btn_open_bmi">TÍNH CHỈ SỐ BMI</string>
-    <string name="btn_open_web_view">XEM THÔNG TIN THAM KHẢO</string>
-
-    <!-- Nội dung màn hình tính BMI -->
-    <string name="bmi_title">TÍNH CHỈ SỐ BMI</string>
-    <string name="weight_label">Nhập cân nặng (kg):</string>
-    <string name="weight_hint">Ví dụ: 60</string>
-    <string name="height_label">Nhập chiều cao (m):</string>
-    <string name="height_hint">Ví dụ: 1.7</string>
-    <string name="btn_calculate">TÍNH BMI</string>
-    <string name="btn_reset">LÀM MỚI</string>
-    <string name="btn_back">QUAY LẠI</string>
-    <string name="empty"></string>
-</resources>
-```
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82542fcf-b172-4c85-8e9c-abc97d0731f3" />
-
-Nhấn:
-
-Ctrl + S
-Bước 10.2. Mở file activity_bmi.xml
+**Mở file activity_bmi.xml**
 
 Ở cây thư mục bên trái, mở:
 
-app
-→ res
-→ layout
-→ activity_bmi.xml
+```
+app → res → layout → activity_bmi.xml
+```
 
 Chuyển sang chế độ viết XML bằng biểu tượng ba dòng ngang ở góc trên bên phải vùng chỉnh sửa.
 
-Bước 10.3. Xóa code cũ và dán giao diện mới
-
-Nhấn:
-
-Ctrl + A
-
-sau đó dán toàn bộ đoạn sau:
+ **Nội dung file XML**
+ 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1464,298 +1317,73 @@ sau đó dán toàn bộ đoạn sau:
 </ScrollView>
 ```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a153c52f-5265-4890-aa19-8ad923f99727" />
-
-Nhấn:
-
-Ctrl + S
-11. Xem trước giao diện
-
-Bấm biểu tượng Design hoặc Split ở góc trên bên phải.
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3580990a-ad24-431a-b31d-273a51d6e040" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b7fb6e9-c08e-4cb3-b4c5-23b081e0a3ce" />
 
 
-Hai vùng:
+Nhấn: ```Ctrl + S```
 
-tvResult
-tvEvaluation
+## 7.2. Viết code xử lý BMI
 
-ban đầu để trống nên bạn chưa nhìn thấy chữ. Sau này code Java sẽ đưa kết quả vào hai vị trí này.
+### 7.2.1. Công thức BMI
 
-12. Ý nghĩa các thành phần quan trọng
-Thành phần	ID	Mục đích
-EditText	edtWeight	Nhập cân nặng
-EditText	edtHeight	Nhập chiều cao
-Button	btnCalculate	Tính BMI
-Button	btnReset	Xóa dữ liệu cũ
-TextView	tvResult	Hiển thị chỉ số BMI
-TextView	tvEvaluation	Hiển thị kết luận
-Button	btnBack	Quay về màn hình trước
-
-TextView dùng để hiển thị văn bản, còn EditText dùng để nhận nội dung người dùng nhập vào.
-
-13. Kiểm tra Build
-
-Sau khi dán XML, nhấn:
-
-Ctrl + F9
-
-Nếu xuất hiện:
-
-Build MOBILE: finished
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fe35dd67-53c7-4159-bb92-c770ca1d83ae" />
-
-## 14. Viết code xử lý trong BmiActivity.java
-
-Code sẽ thực hiện:
-
-Nhấn TÍNH BMI
-→ kiểm tra dữ liệu
-→ tính BMI
-→ làm tròn kết quả đến 2 chữ số thập phân
-→ hiển thị đánh giá
-
-Nhấn LÀM MỚI
-→ xóa dữ liệu cũ
-
-Nhấn QUAY LẠI
-→ trở về MainActivity
-Bước 14.1. Thêm nội dung vào strings.xml
-
-Mở:
-
-app
-→ res
-→ values
-→ strings.xml
-
-Thêm các dòng sau trước thẻ đóng:
-
-</resources>
-
-Nội dung cần thêm:
+```text
+BMI = cân nặng / (chiều cao × chiều cao)
 ```
-    <!-- Nội dung thông báo và kết quả BMI -->
-    <string name="error_empty">Vui lòng nhập đầy đủ cân nặng và chiều cao</string>
-    <string name="error_positive">Cân nặng và chiều cao phải lớn hơn 0</string>
-    <string name="error_invalid_number">Dữ liệu nhập không hợp lệ</string>
 
-    <string name="bmi_result_format">Chỉ số BMI của bạn: %.2f</string>
-    <string name="evaluation_underweight">Kết luận: Thiếu cân</string>
-    <string name="evaluation_normal">Kết luận: Cân nặng hợp lý</string>
-    <string name="evaluation_overweight">Kết luận: Thừa cân</string>
-    <string name="evaluation_obese">Kết luận: Béo phì</string>
+### 7.2.2. Kiểm tra dữ liệu đầu vào
+
+Ứng dụng kiểm tra:
+
+- Người dùng có bỏ trống ô nhập hay không.
+- Cân nặng và chiều cao có lớn hơn `0` hay không.
+- Dữ liệu có chuyển đổi được sang kiểu số hay không.
+
+### 7.2.3. Phân loại kết quả
+
+| Giá trị BMI | Kết luận |
+|---:|---|
+| `< 18.5` | Thiếu cân |
+| `< 25` | Cân nặng hợp lý |
+| `< 30` | Thừa cân |
+| `>= 30` | Béo phì |
+
+## 7.3. Gửi dữ liệu lên API
+
+### 7.3.1. Endpoint
+
+Ứng dụng gửi JSON bằng phương thức `POST` tới:
+
+```text
+https://k58kmt.tdh.io.vn/api/
 ```
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f5d1d364-85eb-47f9-b54b-92252e65efe8" />
 
-Sau đó nhấn:
+#### 7.3.2. Cấu trúc JSON gửi đi
 
-Ctrl + S
-
-Việc đặt nội dung hiển thị trong strings.xml thay vì viết trực tiếp trong code giúp dễ quản lý và hỗ trợ nhiều ngôn ngữ hơn.
-
-Bước 14.2. Mở BmiActivity.java
-
-Ở cây thư mục bên trái, chọn:
-
-app
-→ kotlin+java
-→ com.example.bmicalculator
-→ BmiActivity
-
-Nhấn:
-
-Ctrl + A
-
-để chọn toàn bộ code cũ, sau đó xóa đi.
-
-Bước 14.3. Dán code xử lý BMI
-
-Dán toàn bộ đoạn code sau:
-```
-package com.example.bmicalculator;
-
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class BmiActivity extends AppCompatActivity {
-
-    private EditText edtWeight;
-    private EditText edtHeight;
-    private TextView tvResult;
-    private TextView tvEvaluation;
-    private Button btnCalculate;
-    private Button btnReset;
-    private Button btnBack;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bmi);
-
-        // Liên kết các thành phần trong XML với code Java
-        edtWeight = findViewById(R.id.edtWeight);
-        edtHeight = findViewById(R.id.edtHeight);
-        tvResult = findViewById(R.id.tvResult);
-        tvEvaluation = findViewById(R.id.tvEvaluation);
-        btnCalculate = findViewById(R.id.btnCalculate);
-        btnReset = findViewById(R.id.btnReset);
-        btnBack = findViewById(R.id.btnBack);
-
-        // Xử lý khi người dùng bấm nút TÍNH BMI
-        btnCalculate.setOnClickListener(v -> calculateBmi());
-
-        // Xử lý khi người dùng bấm nút LÀM MỚI
-        btnReset.setOnClickListener(v -> resetForm());
-
-        // Đóng Activity hiện tại để quay về màn hình trước
-        btnBack.setOnClickListener(v -> finish());
-    }
-
-    private void calculateBmi() {
-        String weightText = edtWeight.getText().toString().trim();
-        String heightText = edtHeight.getText().toString().trim();
-
-        // Kiểm tra người dùng đã nhập đủ dữ liệu chưa
-        if (TextUtils.isEmpty(weightText) || TextUtils.isEmpty(heightText)) {
-            Toast.makeText(this, R.string.error_empty, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        try {
-            // Cho phép nhập 1.7 hoặc 1,7
-            double weight = Double.parseDouble(weightText.replace(',', '.'));
-            double height = Double.parseDouble(heightText.replace(',', '.'));
-
-            // Kiểm tra giá trị hợp lệ
-            if (weight <= 0 || height <= 0) {
-                Toast.makeText(this, R.string.error_positive, Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            // Công thức: BMI = cân nặng / chiều cao bình phương
-            double bmi = weight / (height * height);
-
-            // Hiển thị BMI với 2 chữ số sau dấu phẩy
-            tvResult.setText(getString(R.string.bmi_result_format, bmi));
-
-            // Phân loại kết quả
-            if (bmi < 18.5) {
-                tvEvaluation.setText(R.string.evaluation_underweight);
-            } else if (bmi < 25) {
-                tvEvaluation.setText(R.string.evaluation_normal);
-            } else if (bmi < 30) {
-                tvEvaluation.setText(R.string.evaluation_overweight);
-            } else {
-                tvEvaluation.setText(R.string.evaluation_obese);
-            }
-
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, R.string.error_invalid_number, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void resetForm() {
-        edtWeight.setText("");
-        edtHeight.setText("");
-        tvResult.setText("");
-        tvEvaluation.setText("");
-        edtWeight.requestFocus();
-    }
+```json
+{
+  "app_by": "K225480106025",
+  "input": {
+    "weight": 60,
+    "height": 1.7,
+    "name": "BMI Calculator"
+  },
+  "output": {
+    "ketluan": "Kết luận: Cân nặng hợp lý",
+    "bmi": 20.76
+  }
 }
 ```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e210b188-fdcd-464f-8ba7-5e962ec92853" />
+### 7.3.3. Viết code xử lý trong BmiActivity.java
 
-Nhấn:
+**Mở BmiActivity.java**
 
-Ctrl + S
-15. Ý nghĩa các phần quan trọng
-15.1. Lấy dữ liệu từ hai ô nhập
-String weightText = edtWeight.getText().toString().trim();
-String heightText = edtHeight.getText().toString().trim();
+Ở cây thư mục bên trái, chọn:
 
-Hai dòng này lấy nội dung người dùng đã nhập trong EditText.
+app → kotlin+java → com.example.bmicalculator → BmiActivity
 
-15.2. Kiểm tra ô trống
-if (TextUtils.isEmpty(weightText) || TextUtils.isEmpty(heightText))
+**Dán code xử lý BMI**
 
-Ký hiệu:
-
-||
-
-có nghĩa là hoặc. Chỉ cần một ô bị bỏ trống, ứng dụng sẽ hiển thị thông báo.
-
-15.3. Công thức tính BMI
-double bmi = weight / (height * height);
-
-Dòng này tương đương với Blocks bạn đã ghép trong MIT App Inventor:
-
-BMI = cân nặng / (chiều cao × chiều cao)
-15.4. Làm tròn kết quả
-tvResult.setText(getString(R.string.bmi_result_format, bmi));
-
-Trong strings.xml, cú pháp:
-
-<string name="bmi_result_format">Chỉ số BMI của bạn: %.2f</string>
-
-giúp hiển thị 2 chữ số sau dấu phẩy.
-
-Ví dụ:
-
-Chỉ số BMI của bạn: 20.76
-
-
-
-15.5. Quay lại màn hình trước
-btnBack.setOnClickListener(v -> finish());
-
-finish() đóng BmiActivity, vì vậy ứng dụng quay về MainActivity.
-
-16. Build lại Project
-
-Nhấn:
-
-Ctrl + F9
-
-Kết quả mong đợi:
-
-BUILD SUCCESSFUL
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d657dab2-4500-48b4-bdbb-2adeb0a26bd0" />
-
-
-
-
-
-18. Gửi kết quả BMI lên API
-
-API phải được gọi ở luồng nền thay vì luồng giao diện chính. Android cảnh báo rằng thao tác mạng trên luồng chính có thể làm ứng dụng bị treo hoặc phát sinh NetworkOnMainThreadException.
-
-Để đơn giản, bạn thay toàn bộ code của BmiActivity.java bằng một phiên bản đã tích hợp sẵn phần gửi API.
-
-Bước 18.1. Mở file Java
-
-Mở:
-
-app
-→ kotlin+java
-→ com.example.bmicalculator
-→ BmiActivity
-
-Bấm:
-
-Ctrl + A
-
-sau đó dán toàn bộ code dưới đây.
 ```
 package com.example.bmicalculator;
 
@@ -1782,7 +1410,7 @@ import java.util.concurrent.Executors;
 
 public class BmiActivity extends AppCompatActivity {
 
-    private static final String API_URL = "https://k58kmt.tdh.io.vn/api";
+    private static final String API_URL = "https://k58kmt.tdh.io.vn/api/";
     private static final String STUDENT_ID = "K225480106025";
 
     private EditText edtWeight;
@@ -2023,104 +1651,40 @@ public class BmiActivity extends AppCompatActivity {
     }
 }
 ```
-Nhấn:
 
-Ctrl + S
-19. Dữ liệu được gửi lên API
-
-Khi người dùng nhập:
-
-Cân nặng: 60
-Chiều cao: 1.7
-
-ứng dụng sẽ gửi JSON gần giống:
-
-{
-  "app_by": "K225480106025",
-  "input": {
-    "weight": 60,
-    "height": 1.7,
-    "name": "BMI Calculator"
-  },
-  "output": {
-    "ketluan": "Kết luận: Cân nặng hợp lý",
-    "bmi": 20.76
-  }
-}
-
-Nếu API nhận dữ liệu thành công, ứng dụng sẽ hiện thông báo gần giống:
-
-Đã gửi API thành công. STT: 1234
-20. Build lại Project
-
-Nhấn:
-
-Ctrl + F9
-
-Kết quả mong đợi:
-
-BUILD SUCCESSFUL
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cd6eebe-9f45-4bd2-af3c-75176694b984" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/462d1b46-bf57-4959-934e-a26a6fbde42a" />
 
 
-## 21. Bổ sung chuỗi cho màn hình WebView
-Bước 21.1. Mở strings.xml
+Nhấn: ```Ctrl + S```
+
+# 8. Xây dựng `WebViewActivity`
+
+## 8.1. Thiết kế giao diện `activity_web_view.xml`
+
+### 8.1.1. Thành phần giao diện
+
+Màn hình gồm:
+
+- Tiêu đề.
+- `WebView`.
+- Nút tải lại trang.
+- Nút quay lại.
+
+#### 8.1.2. Nội dung XML
+
+**Mở file giao diện**
 
 Ở cây thư mục bên trái, mở:
 
-app
-→ res
-→ values
-→ strings.xml
-Bước 21.2. Thêm nội dung mới
+```
+app → res → layout → activity_web_view.xml
+```
 
-Thêm các dòng sau trước thẻ đóng:
-
-</resources>
-
-Nội dung cần thêm:
-
-    <!-- Nội dung màn hình WebView -->
-    <string name="web_view_title">TRANG THÔNG TIN THAM KHẢO</string>
-    <string name="btn_reload">TẢI LẠI TRANG</string>
-
-Bạn đã có chuỗi dùng chung:
-
-<string name="btn_back">QUAY LẠI</string>
-
-nên không cần khai báo lại.
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/157e71c9-1d81-4e17-a341-1679c67b0b7e" />
-
-Nhấn:
-
-Ctrl + S
-22. Thiết kế giao diện activity_web_view.xml
-Bước 22.1. Mở file giao diện
-
-Ở cây thư mục bên trái, mở:
-
-app
-→ res
-→ layout
-→ activity_web_view.xml
-Bước 22.2. Chuyển sang chế độ Code
-
-Ở góc trên bên phải vùng chỉnh sửa XML, bấm biểu tượng ba dòng ngang:
-
-Code
-Bước 22.3. Xóa XML cũ
-
-Nhấn:
-
-Ctrl + A
-
-sau đó xóa toàn bộ nội dung cũ.
-
-Bước 22.4. Dán XML mới
+Chuyển sang chế độ Code
 
 Dán toàn bộ đoạn sau:
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
@@ -2160,75 +1724,40 @@ Dán toàn bộ đoạn sau:
         android:layout_marginTop="8dp" />
 
 </LinearLayout>
+```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8093a377-b897-4d2d-8407-3130e7799a25" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/38fd9a2d-6564-413c-8cf7-fde88efca254" />
 
-Nhấn:
+Nhấn: ```Ctrl + S```
 
-Ctrl + S
-23. Kiểm tra giao diện WebView
+## 8.2. Viết code `WebViewActivity.java`
 
-Chuyển sang chế độ:
+### 8.2.1. URL truy cập
 
-Design
+```text
+https://k58kmt.tdh.io.vn/?masv=K225480106025
+```
 
-hoặc:
+### 8.2.2. Cấu hình WebView
 
-Split
+- Cho phép JavaScript.
+- Bật DOM Storage.
+- Giữ trang web hiển thị trong ứng dụng.
+- Tạo nút tải lại và quay lại.
 
-Giao diện cần có bố cục:
+### 8.2.3. Code hoàn chỉnh
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/708ec5e7-db42-4464-80f1-5b71404a051a" />
-
-TRANG THÔNG TIN THAM KHẢO
-
-┌──────────────────────────┐
-│                          │
-│         WebView          │
-│                          │
-│                          │
-└──────────────────────────┘
-
-[        TẢI LẠI TRANG       ]
-
-[           QUAY LẠI         ]
-
-Trong màn hình thiết kế, vùng WebView có thể chỉ hiển thị một khung trống. Điều này là bình thường. Trang web chỉ được tải khi chạy ứng dụng.
-
-Ý nghĩa của layout_weight
-
-Trong XML có đoạn:
-
-android:layout_height="0dp"
-android:layout_weight="1"
-
-Hai thuộc tính này giúp WebView chiếm toàn bộ khoảng trống còn lại trên màn hình, nhưng vẫn dành chỗ cho hai nút bên dưới.
-
-
-
-
-
-24. Viết code cho WebViewActivity.java
-Bước 24.1. Mở file Java
+**Mở file Java**
 
 Ở cây thư mục bên trái, mở:
 
-app
-→ kotlin+java
-→ com.example.bmicalculator
-→ WebViewActivity
-Bước 24.2. Xóa code tự sinh
+```
+app → kotlin+java → com.example.bmicalculator → WebViewActivity
+```
 
-Nhấn:
+**Dán toàn bộ đoạn sau:**
 
-Ctrl + A
-
-sau đó xóa toàn bộ code cũ.
-
-Bước 24.3. Dán code mới
-
-Dán toàn bộ đoạn sau:
-
+```
 package com.example.bmicalculator;
 
 import android.os.Bundle;
@@ -2302,143 +1831,254 @@ public class WebViewActivity extends AppCompatActivity {
         super.onDestroy();
     }
 }
+```
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9f733a2e-ca10-4d2c-917e-5a7d21d7251c" />
 
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ffc2cc3f-83c5-484d-82e0-c3953dd3a855" />
+Nhấn: ```Ctrl + S```
+
+# 9. Build và chạy ứng dụng
+
+## 9.1. Build Project
+
+### 9.1.1. Thực hiện Build
 
 Nhấn:
 
-Ctrl + S
+```text
+Ctrl + F9
+```
+
+### 9.1.2. Kiểm tra kết quả
+
+Thành công, Android Studio hiển thị:
+
+```text
+BUILD SUCCESSFUL
+```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6c17e9c-75bc-47c9-b059-37055dadba81" />
+
+## 9.2. Tạo máy ảo Android
+
+### 9.2.1. Mở Device Manager
+
+Ở góc trên bên trái, bấm biểu tượng: ☰
+
+Sau đó chọn: 
+```
+Tools → Device Manager
+```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/436c8137-fe9d-48ed-ab7d-eb8aee8af71a" />
+
+
+### 9.2.2. Tạo thiết bị mới
+
+Chọn:
+
+```text
++ → Create Virtual Device
+```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/5e8dbe2e-0f02-414a-b731-3fc5298717e6" />
+
+
+### 9.2.3. Chọn thiết bị
+
+Trong mục:
+```
+Phone
+```
+chọn một thiết bị bất kì, ở đây em chọn
+
+```
+Pixel 6
+```
+Sau đó bấm: ```Next```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/3132bd84-c818-44f2-812b-e7a7b4526d6b" />
+
+### 9.2.4. Chọn phiên bản Android
+
+Android Studio sẽ hiển thị danh sách System Image.
+
+Chọn một phiên bản có nút tải xuống, ở đây em chọn  :
+
+```
+API 36
+```
+
+<img width="1980" height="986" alt="image" src="https://github.com/user-attachments/assets/e10dc20a-ed95-416e-adf9-f345764b039f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/63142586-0b9c-4930-92c7-1d8971a53354" />
+
+Nếu bên cạnh phiên bản có biểu tượng tải xuống, bấm vào đó và chờ tải hoàn tất.
+
+Sau đó chọn phiên bản vừa tải và bấm: ```Next```
+
+
+### 9.2.5. Hoàn tất
+
+Giữ nguyên cấu hình mặc định và bấm: ```Finish```
+
+Điện thoại ảo sẽ xuất hiện trong Device Manager.
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/938bdc40-5da5-4add-82e0-98f56e4a24e8" />
 
 
 
 
-25. Ý nghĩa code WebView
-25.1. Mở trang theo mã sinh viên
-private static final String WEB_URL =
-        "https://k58kmt.tdh.io.vn?masv=K225480106025";
-
-URL chứa mã sinh viên của bạn để trang web có thể nhận diện ứng dụng đang truy cập.
-
-25.2. Cho phép chạy JavaScript
-webSettings.setJavaScriptEnabled(true);
-
-Một số trang web cần JavaScript để hiển thị và xử lý nội dung động.
-
-25.3. Giữ liên kết trong ứng dụng
-webView.setWebViewClient(new WebViewClient());
-
-Nếu thiếu dòng này, khi bấm vào một liên kết, Android có thể mở trình duyệt bên ngoài. Khi thêm dòng trên, liên kết tiếp tục được hiển thị trong WebViewActivity.
-
-25.4. Nút tải lại
-btnReload.setOnClickListener(v -> webView.reload());
-
-Khi bấm TẢI LẠI TRANG, WebView tải lại nội dung hiện tại.
-
-25.5. Nút quay lại
-btnBack.setOnClickListener(v -> finish());
-
-finish() đóng WebViewActivity và quay lại MainActivity.
 
 
 
-27. Build Project
+## 10. Kiểm tra lỗi sau khi dán code
+
+Sau khi lưu, quan sát file MainActivity.java.
+
+Nếu không có chữ màu đỏ hoặc gạch chân đỏ thì code đã hợp lệ.
+
+Bạn cũng có thể chọn:
+
+Build
+
+
+hoặc dùng phím tắt:
+
+Ctrl + F9
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/97c89a7b-e141-4429-8300-ef2debba12d6" />
+
+Hiện ```Build MOBILE: finished```
+
+Điều đó nghĩa là Project hiện tại không có lỗi làm hỏng quá trình build.
+
+
+
+11. Xem trước giao diện
+
+Bấm biểu tượng Design hoặc Split ở góc trên bên phải.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3580990a-ad24-431a-b31d-273a51d6e040" />
+
+
+Hai vùng:
+
+tvResult
+tvEvaluation
+
+ban đầu để trống nên bạn chưa nhìn thấy chữ. Sau này code Java sẽ đưa kết quả vào hai vị trí này.
+
+12. Ý nghĩa các thành phần quan trọng
+Thành phần	ID	Mục đích
+EditText	edtWeight	Nhập cân nặng
+EditText	edtHeight	Nhập chiều cao
+Button	btnCalculate	Tính BMI
+Button	btnReset	Xóa dữ liệu cũ
+TextView	tvResult	Hiển thị chỉ số BMI
+TextView	tvEvaluation	Hiển thị kết luận
+Button	btnBack	Quay về màn hình trước
+
+TextView dùng để hiển thị văn bản, còn EditText dùng để nhận nội dung người dùng nhập vào.
+
+
+
+
+
+
+
+
+
+19. Dữ liệu được gửi lên API
+
+Khi người dùng nhập:
+
+Cân nặng: 60
+Chiều cao: 1.7
+
+ứng dụng sẽ gửi JSON gần giống:
+
+{
+  "app_by": "K225480106025",
+  "input": {
+    "weight": 60,
+    "height": 1.7,
+    "name": "BMI Calculator"
+  },
+  "output": {
+    "ketluan": "Kết luận: Cân nặng hợp lý",
+    "bmi": 20.76
+  }
+}
+
+Nếu API nhận dữ liệu thành công, ứng dụng sẽ hiện thông báo gần giống:
+
+Đã gửi API thành công. STT: 1234
+20. Build lại Project
 
 Nhấn:
 
 Ctrl + F9
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8d112816-2753-4949-9862-28229511e864" />
 
 Kết quả mong đợi:
 
 BUILD SUCCESSFUL
 
-Nếu build thành công, bạn đã hoàn thành code cơ bản của cả 3 Activity:
-
-MainActivity
-→ màn hình giới thiệu và điều hướng
-
-BmiActivity
-→ tính BMI và gửi kết quả lên API
-
-WebViewActivity
-→ hiển thị trang web theo mã sinh viên
-
-
-## 28. Tạo điện thoại ảo để chạy ứng dụng
-Bước 28.1. Mở Device Manager
-
-Ở góc trên bên trái, bấm biểu tượng:
-
-☰
-
-Sau đó chọn:
-
-Tools → Device Manager
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ee8dd4d2-b1a5-4c70-b257-826e87b0f712" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0cd6eebe-9f45-4bd2-af3c-75176694b984" />
 
 
 
-Theo tài liệu Android, sau khi mở một Project, Device Manager là nơi tạo và quản lý Android Virtual Device, viết tắt là AVD.
+23. Kiểm tra giao diện WebView
 
-Bước 28.2. Tạo thiết bị mới
+Chuyển sang chế độ:
 
-Trong bảng Device Manager, bấm:
-
-+
-
-sau đó chọn:
-
-Create Virtual Device
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dc31793b-1c93-4ea3-aad8-fec6a7f2eb02" />
-
-Bước 28.3. Chọn mẫu điện thoại
-
-Trong mục:
-
-Phone
-
-chọn một thiết bị phổ biến, ví dụ:
-
-Pixel 6
-
-Sau đó bấm:
-
-Next
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b10eb6d8-7cb2-4bcf-9440-1f264e50a1eb" />
-
-Bạn không nhất thiết phải chọn đúng Pixel 6. Một mẫu Pixel khác cũng sử dụng được.
-
-Bước 28.4. Chọn phiên bản Android
-
-Android Studio sẽ hiển thị danh sách System Image.
-
-Chọn một phiên bản có nút tải xuống, ví dụ:
-
-API 35
+Design
 
 hoặc:
 
-API 36
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/81a70692-896c-443c-a07f-cf30f82c19eb" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/63142586-0b9c-4930-92c7-1d8971a53354" />
+Split
 
-Nếu bên cạnh phiên bản có biểu tượng tải xuống, bấm vào đó và chờ tải hoàn tất.
+Giao diện cần có bố cục:
 
-Sau đó chọn phiên bản vừa tải và bấm:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/708ec5e7-db42-4464-80f1-5b71404a051a" />
 
-Next
+TRANG THÔNG TIN THAM KHẢO
 
-Theo hướng dẫn chính thức, quá trình tạo AVD gồm chọn cấu hình phần cứng, chọn system image, kiểm tra cấu hình rồi bấm Finish.
+┌──────────────────────────┐
+│                          │
+│         WebView          │
+│                          │
+│                          │
+└──────────────────────────┘
 
-Bước 28.5. Hoàn tất
+[        TẢI LẠI TRANG       ]
 
-Giữ nguyên cấu hình mặc định và bấm:
+[           QUAY LẠI         ]
 
-Finish
+Trong màn hình thiết kế, vùng WebView có thể chỉ hiển thị một khung trống. Điều này là bình thường. Trang web chỉ được tải khi chạy ứng dụng.
 
-Điện thoại ảo sẽ xuất hiện trong Device Manager.
+Ý nghĩa của layout_weight
+
+Trong XML có đoạn:
+
+android:layout_height="0dp"
+android:layout_weight="1"
+
+Hai thuộc tính này giúp WebView chiếm toàn bộ khoảng trống còn lại trên màn hình, nhưng vẫn dành chỗ cho hai nút bên dưới.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 29. Chạy ứng dụng
 Bước 29.1. Chọn thiết bị
