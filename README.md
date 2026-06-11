@@ -617,7 +617,7 @@ Kéo Button từ Palette sang Viewer
 
 → Đổi tên Button thành btnTinh
 
-#### 6.2. Tại sao cần đổi tên thành phần?
+### 6.2. Tại sao cần đổi tên thành phần?
 
 Tên mặc định như:
 
@@ -989,7 +989,7 @@ Nếu ghi trực tiếp nội dung trong XML, Android Studio sẽ cảnh báo ha
 app → res → values → strings.xml
 ```
 
-### 5.2. Cú pháp tham chiếu chuỗi
+## 5.2. Cú pháp tham chiếu chuỗi
 
 Trong XML, tham chiếu chuỗi bằng cú pháp:
 
@@ -1133,7 +1133,7 @@ Sau khi dán xong, chọn: ```Design or Split``` để xem trước giao diện.
 
 ## 6.2. Viết code điều hướng trong `MainActivity.java`
 
-### Bước 6.2.1. Mở file Java
+### 6.2.1. Mở file Java
 
 Ở cây thư mục bên trái, bấm:
 
@@ -1363,7 +1363,7 @@ BMI = cân nặng / (chiều cao × chiều cao)
 https://k58kmt.tdh.io.vn/api/
 ```
 
-#### 7.3.2. Cấu trúc JSON gửi đi
+### 7.3.2. Cấu trúc JSON gửi đi
 
 ```json
 {
@@ -1676,7 +1676,7 @@ Màn hình gồm:
 - Nút tải lại trang.
 - Nút quay lại.
 
-#### 8.1.2. Nội dung XML
+### 8.1.2. Nội dung XML
 
 **Mở file giao diện**
 
@@ -1975,7 +1975,7 @@ Mã sinh viên: K225480106025
 ```
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/152befe5-d35a-4d31-8ebf-ff4f449588e3" />
 
-#### 10.1.2. Kiểm tra nút điều hướng
+### 10.2.2. Kiểm tra nút điều hướng
 
 Hai nút:
 
@@ -1992,9 +1992,9 @@ XEM THÔNG TIN THAM KHẢO
 
 ***Giao diện XEM THÔNG TIN THAM KHẢO***
 
-### 10.2. Kiểm tra màn hình tính BMI
+### 10.3. Kiểm tra màn hình tính BMI
 
-#### 10.2.1. Trường hợp bỏ trống dữ liệu
+#### 10.3.1. Trường hợp bỏ trống dữ liệu
 
 Không nhập dữ liệu và bấm:
 
@@ -2010,7 +2010,7 @@ Vui lòng nhập đầy đủ cân nặng và chiều cao
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed044d97-a719-4f71-a01d-be36997459d4" />
 
-#### 10.2.2. Trường hợp nhập giá trị bằng `0`
+#### 10.3.2. Trường hợp nhập giá trị bằng `0`
 
 Nhập:
 
@@ -2027,7 +2027,7 @@ Cân nặng và chiều cao phải lớn hơn 0
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/810d5f66-095e-45d9-ba85-a0157ad6a3f0" />
 
 
-#### 10.2.3. Trường hợp dữ liệu hợp lệ
+#### 10.3.3. Trường hợp dữ liệu hợp lệ
 
 Nhập:
 
@@ -2045,8 +2045,8 @@ Kết luận: Cân nặng hợp lý
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8bfba984-4135-4689-9caa-d9eff897e11b" />
 
-## 10.3. Kiểm tra gửi API
-### 10.3.1. Thông báo gửi thành công
+## 10.4. Kiểm tra gửi API
+### 10.4.1. Thông báo gửi thành công
 
 Sau khi tính BMI, ứng dụng hiển thị:
 
@@ -2055,7 +2055,7 @@ Sau khi tính BMI, ứng dụng hiển thị:
 ```
 <img width="1578" height="894" alt="image" src="https://github.com/user-attachments/assets/60d667d3-79cc-47f7-839f-9bc379279867" />
 
-### 10.3.2. Kiểm tra JSON LOG
+### 10.4.2. Kiểm tra JSON LOG
 
 Trang log hiển thị dữ liệu có:
 
@@ -2066,9 +2066,9 @@ app_by = K225480106025
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c224d7bd-2145-444f-943b-05cbd504669b" />
 
 
-## 10.4. Kiểm tra nút làm mới và quay lại
+## 10.5. Kiểm tra nút làm mới và quay lại
 
-### 10.4.1. Nút làm mới
+### 10.5.1. Nút làm mới
 
 Bấm:
 
@@ -2080,7 +2080,7 @@ LÀM MỚI
 
 ***Hai ô nhập và kết quả cũ được xóa.***
 
-### 10.4.2. Nút quay lại
+### 10.5.2. Nút quay lại
 
 Bấm:
 
@@ -2093,9 +2093,9 @@ QUAY LẠI
 ***Ứng dụng trở về màn hình chính.***
 
 
-## 10.5. Kiểm tra WebView
+## 10.6. Kiểm tra WebView
 
-### 10.5.1. Mở trang tham khảo
+### 10.6.1. Mở trang tham khảo
 
 Từ màn hình chính, bấm:
 
@@ -2106,7 +2106,7 @@ XEM THÔNG TIN THAM KHẢO
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c59e99ac-db5a-4235-89b1-c81c097c2275" />
 
 
-### 10.5.3. Kiểm tra SV LOG
+### 10.6.2. Kiểm tra SV LOG
 
 Sau khi WebView tải trang, số lượt truy cập trong `SV LOG` tăng lên.
 
