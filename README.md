@@ -706,20 +706,24 @@ Cách sử dụng:
 
 # Phần 2. Viết app sử dụng Android Studio
 
-1. Tạo Project Android Studio
+# 1. Tên đề tài
 
-Bước 1.1. Mở Android Studio
+**Xây dựng ứng dụng tính chỉ số BMI bằng Android Studio**
+
+# 2. Tạo Project Android Studio
+
+## 2.1. Khởi tạo Project mới
 
 Mở Android Studio.
 
 Nếu đang ở màn hình chào mừng, bấm:
-
+```
 New Project
+```
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/d17d7e37-739c-4123-b5a3-4eea11bc05d8" />
 
-
-Bước 1.2. Chọn mẫu Project
+### 2.1.1. Chọn mẫu Project
 
 Trong danh sách mẫu, chọn:
 
@@ -731,7 +735,7 @@ Sau đó bấm: Next
 
 Empty Views Activity:	Dùng Java và file giao diện XML
 
-Bước 1.3. Điền thông tin Project
+### 2.1.2. Điền thông tin Project
 
 Điền các giá trị sau:
 
@@ -749,11 +753,9 @@ Sau đó bấm: Finish
 
 Chờ Android Studio tải và đồng bộ Project.
 
-Bước 1.4. Kiểm tra Project đã tạo thành công
+## 2.2. Kiểm tra Project đã tạo thành công
 
-Ở cột bên trái, chọn chế độ hiển thị:
-
-Android
+Ở cột bên trái, chọn chế độ hiển thị: ```Android```
 
 Sau đó mở cây thư mục:
 ```
@@ -775,30 +777,33 @@ Thấy MainActivity.java và activity_main.xml, đã tạo Project đúng.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0483f7ee-4ccb-4b5f-91af-08c29b8ab7e3" />
 
-## 2. Tạo BmiActivity
+# 3. Tạo các Activity
 
-### 2.1. Mở thư mục chứa code Java
+## 3.1. Tạo BmiActivity
+
+### 3.1.1. Mở chức năng tạo Activity
 
 Ở cột bên trái, mở:
+
 ```
 app
 └── java
     └── com.example.bmicalculator
 ```
-Nhấp chuột phải vào:
 
-com.example.bmicalculator
+Nhấp chuột phải vào: ```com.example.bmicalculator```
 
 Chọn:
-
+```
 New → Activity → Empty Views Activity
+```
 
 Android Studio có thể tự tạo Activity, file layout XML và cập nhật Manifest khi bạn sử dụng thao tác này.
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/6093016f-db78-487b-88cb-c3034bf0e84e" />
 
 
-### 3.2. Điền thông tin
+### 3.1.2. Cấu hình BmiActivity
 
 Trong cửa sổ hiện ra, nhập:
 
@@ -813,17 +818,21 @@ Bấm: Finish
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f8099754-3f67-4288-914b-d4dd6faf067a" />
 
-## 4. Tạo WebViewActivity
+## 3.2. Tạo WebViewActivity
 
 Làm tương tự:
 
 Nhấp chuột phải vào:
 
+```
 com.example.bmicalculator
+```
 
 Chọn:
 
+```
 New → Activity → Empty Views Activity
+```
 
 Nhập:
 
@@ -834,13 +843,11 @@ Nhập:
 | Source Language | Java |
 | Launcher Activity | Không chọn |
 
-Bấm:
-
-Finish
+Bấm: Finish
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8233818b-9973-4764-905a-5ca73f2780b6" />
 
-## 5. Kiểm tra cấu trúc sau khi tạo 3 Activity
+## 3.3. Kiểm tra cấu trúc sau khi tạo 3 Activity
 
 Cấu trúc Project cần có dạng:
 
@@ -864,68 +871,205 @@ app
 
 Mở:
 
+```
 app → manifests → AndroidManifest.xml
-
-Sẽ thấy 3 Activity đã được khai báo gần giống:
-
 ```
-<application
-    ... >
 
-    <activity
-        android:name=".WebViewActivity"
-        android:exported="false" />
+Sẽ thấy 3 Activity đã được khai báo:
 
-    <activity
-        android:name=".BmiActivity"
-        android:exported="false" />
-
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-    </activity>
-
-</application>
-```
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/28f80d75-fdb2-44dd-aed8-8cd2e0be5898" />
 
 MainActivity là màn hình khởi động nên có intent-filter chứa MAIN và LAUNCHER. Hai Activity còn lại được mở từ bên trong ứng dụng nên chưa cần intent-filter. Activity không khai báo intent-filter chỉ có thể được khởi chạy bằng Intent tường minh.
 
 
-### 6. thiết kế giao diện MainActivity
+# 4. Khai báo trong `AndroidManifest.xml`
 
-Màn hình này tương đương với Screen1 trong MIT App Inventor. Nó cần có:
+## 4.1. Vai trò của `AndroidManifest.xml`
 
-Tiêu đề ứng dụng
-Mô tả ngắn
-Thông tin sinh viên
-Nút TÍNH CHỈ SỐ BMI
-Nút XEM THÔNG TIN THAM KHẢO
-Bước 1. Mở file giao diện
+`AndroidManifest.xml` dùng để khai báo:
+
+- Các Activity trong ứng dụng.
+- Activity nào được mở đầu tiên.
+- Các quyền mà ứng dụng cần sử dụng.
+- Một số thông tin cấu hình chung của app.
+
+## 4.2. Khai báo quyền Internet
+
+### 4.2.1. Lý do cần quyền Internet
+
+Ứng dụng cần Internet để:
+
+- Gửi kết quả BMI lên API.
+- Hiển thị trang web trong `WebViewActivity`.
+
+### 4.2.2. Thêm quyền vào Manifest
+
+**Mở Manifest**
 
 Ở cây thư mục bên trái, mở:
 
-app
-→ res
-→ layout
-→ activity_main.xml
-Bước 2. Chuyển sang chế độ viết XML
+```
+app → manifests → AndroidManifest.xml
+```
 
-Ở góc trên bên phải của vùng chỉnh sửa giao diện, chọn:
+**Thêm hai dòng quyền**
 
-Code
+Ngay bên dưới thẻ mở <manifest> và phía trên <application>, thêm:
+
+```
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/26a2fa33-7fac-4951-bc6c-fd7993d757ce" />
+
+Nhấn:
+
+Ctrl + S
+
+## 4.3. Khai báo các Activity
+
+Nội dung `AndroidManifest.xml`:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BMICalculator">
+
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BmiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
+
+```
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0b51d1e8-e7b7-4450-8dbe-dab91863b496" />
+
+# 5. Khai báo tài nguyên chuỗi trong `strings.xml`
+
+## 5.1. Lý do sử dụng `strings.xml`
+
+Nếu ghi trực tiếp nội dung trong XML, Android Studio sẽ cảnh báo hardcode.  
+
+Để dễ quản lý và hỗ trợ nhiều ngôn ngữ, nội dung hiển thị được lưu trong:
+
+```text
+app → res → values → strings.xml
+```
+
+### 5.2. Cú pháp tham chiếu chuỗi
+
+Trong XML, tham chiếu chuỗi bằng cú pháp:
+
+```xml
+@string/ten_tai_nguyen
+```
+
+## 5.3. Nội dung file `strings.xml`
+
+**Mở file strings.xml**
+
+Ở cây thư mục bên trái, bấm:
+```
+app → res → values → strings.xml
+```
+
+**Chuyển sang chế độ Code**
+
+Nếu Android Studio mở giao diện khác, bấm biểu tượng ba dòng ngang ở góc trên bên phải để chuyển sang chế độ viết code.
+
+```
+<resources>
+    <string name="app_name">BMI Calculator</string>
+
+    <!-- Nội dung màn hình chính -->
+    <string name="main_title">ỨNG DỤNG TÍNH CHỈ SỐ BMI</string>
+    <string name="main_description">Ứng dụng hỗ trợ tính BMI dựa trên cân nặng và chiều cao.</string>
+    <string name="student_info">Sinh viên: Lương Văn Học\nMã sinh viên: K225480106025</string>
+    <string name="btn_open_bmi">TÍNH CHỈ SỐ BMI</string>
+    <string name="btn_open_web_view">XEM THÔNG TIN THAM KHẢO</string>
+
+    <!-- Nội dung màn hình tính BMI -->
+    <string name="bmi_title">TÍNH CHỈ SỐ BMI</string>
+    <string name="weight_label">Nhập cân nặng (kg):</string>
+    <string name="weight_hint">Ví dụ: 60</string>
+    <string name="height_label">Nhập chiều cao (m):</string>
+    <string name="height_hint">Ví dụ: 1.7</string>
+    <string name="btn_calculate">TÍNH BMI</string>
+    <string name="btn_reset">LÀM MỚI</string>
+    <string name="btn_back">QUAY LẠI</string>
+    <string name="empty"></string>
+
+    <!-- Nội dung thông báo và kết quả BMI -->
+    <string name="error_empty">Vui lòng nhập đầy đủ cân nặng và chiều cao</string>
+    <string name="error_positive">Cân nặng và chiều cao phải lớn hơn 0</string>
+    <string name="error_invalid_number">Dữ liệu nhập không hợp lệ</string>
+
+    <string name="bmi_result_format">Chỉ số BMI của bạn: %.2f</string>
+    <string name="evaluation_underweight">Kết luận: Thiếu cân</string>
+    <string name="evaluation_normal">Kết luận: Cân nặng hợp lý</string>
+    <string name="evaluation_overweight">Kết luận: Thừa cân</string>
+    <string name="evaluation_obese">Kết luận: Béo phì</string>
+
+    <!-- Nội dung màn hình WebView -->
+    <string name="web_view_title">TRANG THÔNG TIN THAM KHẢO</string>
+    <string name="btn_reload">TẢI LẠI TRANG</string>
+</resources>
+```
+Nhấn: ```Ctrl + S``` để lưu.
+
+# 6. Thiết kế giao diện MainActivity
+
+## 6.1. Thiết kế giao diện `activity_main.xml`
+
+### 6.1.1. Mở file giao diện
+
+Ở cây thư mục bên trái, mở:
+
+```
+app → res → layout → activity_main.xml
+```
+
+### 6.1.2. Chuyển sang chế độ viết XML
+
+Ở góc trên bên phải của vùng chỉnh sửa giao diện, chọn: ```Code```
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/591c469a-ee5a-4122-b9e3-b69bb5efbc97" />
 
-Bước 3. Xóa code cũ và dán giao diện mới
+### 6.1.3. Nội dung file XML
 
-Xóa toàn bộ nội dung trong activity_main.xml, sau đó dán đoạn này:
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -939,7 +1083,7 @@ Xóa toàn bộ nội dung trong activity_main.xml, sau đó dán đoạn này:
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ỨNG DỤNG TÍNH CHỈ SỐ BMI"
+        android:text="@string/main_title"
         android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -949,7 +1093,7 @@ Xóa toàn bộ nội dung trong activity_main.xml, sau đó dán đoạn này:
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ứng dụng hỗ trợ tính BMI dựa trên cân nặng và chiều cao."
+        android:text="@string/main_description"
         android:textSize="16sp"
         android:gravity="center"
         android:layout_marginBottom="16dp" />
@@ -958,7 +1102,7 @@ Xóa toàn bộ nội dung trong activity_main.xml, sau đó dán đoạn này:
         android:id="@+id/tvStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sinh viên: Lương Văn Học\nMSSV: K225480106025"
+        android:text="@string/student_info"
         android:textSize="15sp"
         android:gravity="center"
         android:layout_marginBottom="24dp" />
@@ -967,64 +1111,86 @@ Xóa toàn bộ nội dung trong activity_main.xml, sau đó dán đoạn này:
         android:id="@+id/btnOpenBmi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TÍNH CHỈ SỐ BMI"
+        android:text="@string/btn_open_bmi"
         android:layout_marginBottom="12dp" />
 
     <Button
         android:id="@+id/btnOpenWebView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="XEM THÔNG TIN THAM KHẢO" />
+        android:text="@string/btn_open_web_view" />
 
 </LinearLayout>
 ```
-Bước 4. Kiểm tra giao diện
 
-Sau khi dán xong, chọn:
+### 6.1.4 Kiểm tra giao diện
 
-Design
+Sau khi dán xong, chọn: ```Design or Split``` để xem trước giao diện.
 
-hoặc:
-
-Split
-
-để xem trước giao diện.
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03b5eb34-f888-41c9-bb2b-8313f04ff72a" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6b573a14-7ca4-4971-8c0b-809c79a9ae6d" />
 
 
-## 7. Đưa nội dung vào strings.xml
+## 6.2. Viết code điều hướng trong `MainActivity.java`
 
-Bước 1. Mở file strings.xml
+### Bước 6.2.1. Mở file Java
 
 Ở cây thư mục bên trái, bấm:
 
-app
-→ res
-→ values
-→ strings.xml
-Bước 2. Chuyển sang chế độ Code
+app → kotlin+java → com.example.bmicalculator → MainActivity
 
-Nếu Android Studio mở giao diện khác, bấm biểu tượng ba dòng ngang ở góc trên bên phải để chuyển sang chế độ viết code.
+Tệp được mở là: ```MainActivity.java```
 
-Bạn sẽ thấy nội dung gần giống:
+### 6.2.2. Dán code 
+
+Dán toàn bộ đoạn sau vào MainActivity.java:
+
 ```
-<resources>
-    <string name="app_name">BMI Calculator</string>
+package com.example.bmicalculator;
 
-    <string name="main_title">ỨNG DỤNG TÍNH CHỈ SỐ BMI</string>
-    <string name="main_description">Ứng dụng hỗ trợ tính BMI dựa trên cân nặng và chiều cao.</string>
-    <string name="student_info">Sinh viên: Lương Văn Học\nMã sinh viên: K225480106025</string>
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
 
-    <string name="btn_open_bmi">TÍNH CHỈ SỐ BMI</string>
-    <string name="btn_open_web_view">XEM THÔNG TIN THAM KHẢO</string>
-</resources>
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private Button btnOpenBmi;
+    private Button btnOpenWebView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Liên kết các Button trong file XML với code Java
+        btnOpenBmi = findViewById(R.id.btnOpenBmi);
+        btnOpenWebView = findViewById(R.id.btnOpenWebView);
+
+        // Mở màn hình tính BMI khi người dùng bấm nút
+        btnOpenBmi.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BmiActivity.class);
+            startActivity(intent);
+        });
+
+        // Mở màn hình WebView khi người dùng bấm nút
+        btnOpenWebView.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+            startActivity(intent);
+        });
+    }
+}
 ```
-Nhấn:
+Nhấn: ```Ctrl + S``` để lưu file.
 
-Ctrl + S
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a5befad-09bf-4549-9fa9-ebc7d45bc64b" />
 
-để lưu.
+
+
+
+# 5. Khai báo tài nguyên chuỗi trong strings.xml
+
+
 
 Sửa lại activity_main.xml
 Bước 4. Mở lại file giao diện
@@ -1097,67 +1263,6 @@ Nội dung đầy đủ của activity_main.xml nên có dạng:
 Nhấn:
 
 Ctrl + S
-
-## 8. Viết code chuyển màn hình trong MainActivity
-### Bước 8.1. Mở file Java
-
-Ở cây thư mục bên trái, bấm:
-
-app
-→ kotlin+java
-→ com.example.bmicalculator
-→ MainActivity
-
-Tệp được mở là:
-
-MainActivity.java
-
-
-Bước 8.3. Dán code mới
-
-Dán toàn bộ đoạn sau vào MainActivity.java:
-```
-package com.example.bmicalculator;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
-
-    private Button btnOpenBmi;
-    private Button btnOpenWebView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Liên kết các Button trong file XML với code Java
-        btnOpenBmi = findViewById(R.id.btnOpenBmi);
-        btnOpenWebView = findViewById(R.id.btnOpenWebView);
-
-        // Mở màn hình tính BMI khi người dùng bấm nút
-        btnOpenBmi.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, BmiActivity.class);
-            startActivity(intent);
-        });
-
-        // Mở màn hình WebView khi người dùng bấm nút
-        btnOpenWebView.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            startActivity(intent);
-        });
-    }
-}
-```
-Nhấn:
-
-Ctrl + S
-
-để lưu file.
 
 
 ## 10. Kiểm tra lỗi sau khi dán code
@@ -1607,6 +1712,9 @@ giúp hiển thị 2 chữ số sau dấu phẩy.
 Ví dụ:
 
 Chỉ số BMI của bạn: 20.76
+
+
+
 15.5. Quay lại màn hình trước
 btnBack.setOnClickListener(v -> finish());
 
@@ -1627,52 +1735,7 @@ BUILD SUCCESSFUL
 
 
 
-## 17. Khai báo quyền Internet
 
-Ứng dụng cần Internet để:
-
-Gửi kết quả BMI lên API
-Hiển thị trang web trong WebViewActivity
-
-Android yêu cầu khai báo quyền mạng trong AndroidManifest.xml. Tài liệu Android khuyến nghị khai báo INTERNET và ACCESS_NETWORK_STATE cho thao tác mạng; đây là các quyền thông thường, được cấp khi cài app và không cần hiện hộp thoại xin quyền khi chạy.
-
-Bước 17.1. Mở Manifest
-
-Ở cây thư mục bên trái, mở:
-
-app
-→ manifests
-→ AndroidManifest.xml
-Bước 17.2. Thêm hai dòng quyền
-
-Tìm phần đầu file:
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-Ngay bên dưới thẻ mở <manifest> và phía trên <application>, thêm:
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-File sẽ gần giống:
-
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <application
-        android:allowBackup="true"
-        ...
-
-Lưu ý: không đặt hai dòng quyền vào bên trong <application>.
-
-Nhấn:
-
-Ctrl + S
 18. Gửi kết quả BMI lên API
 
 API phải được gọi ở luồng nền thay vì luồng giao diện chính. Android cảnh báo rằng thao tác mạng trên luồng chính có thể làm ứng dụng bị treo hoặc phát sinh NetworkOnMainThreadException.
@@ -2141,6 +2204,10 @@ android:layout_weight="1"
 
 Hai thuộc tính này giúp WebView chiếm toàn bộ khoảng trống còn lại trên màn hình, nhưng vẫn dành chỗ cho hai nút bên dưới.
 
+
+
+
+
 24. Viết code cho WebViewActivity.java
 Bước 24.1. Mở file Java
 
@@ -2242,6 +2309,10 @@ public class WebViewActivity extends AppCompatActivity {
 Nhấn:
 
 Ctrl + S
+
+
+
+
 25. Ý nghĩa code WebView
 25.1. Mở trang theo mã sinh viên
 private static final String WEB_URL =
@@ -2269,20 +2340,7 @@ btnBack.setOnClickListener(v -> finish());
 
 finish() đóng WebViewActivity và quay lại MainActivity.
 
-26. Kiểm tra lại quyền Internet
 
-Bạn đã thêm quyền Internet ở bước trước. Mở:
-
-app
-→ manifests
-→ AndroidManifest.xml
-
-Kiểm tra hai dòng sau nằm phía trên thẻ <application>:
-
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-Nếu đã có rồi thì không cần sửa thêm.
 
 27. Build Project
 
