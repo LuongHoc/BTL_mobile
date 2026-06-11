@@ -389,7 +389,7 @@ when btnQuayLai.Click
 ## 4. Làm ScreenWebView: Hiển thị trang web
 Chuyển sang: ```ScreenWebView```
 
-### 5.1. Thiết kế giao diện
+### 4.1. Thiết kế giao diện
 
 Chọn ScreenWebView, chỉnh:
 
@@ -505,7 +505,7 @@ Vui lòng nhập đầy đủ cân nặng và chiều cao
 
 <img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/2576c07e-9cba-476f-9eb9-a6f19dd8c9c3" />
 
-### 5.5.3. Kiểm tra dữ liệu bằng 0
+#### 5.5.3. Kiểm tra dữ liệu bằng 0
 
 Nhập:
 
@@ -583,6 +583,114 @@ QUAY LẠI
 
 <img width="1220" height="2712" alt="image" src="https://github.com/user-attachments/assets/08b2ba6b-663f-41e5-89b6-f5d551c7fbd8" />
 
+## 6. Giải thích thanh công cụ trong MIT App Inventor
+
+MIT App Inventor có hai khu vực làm việc chính:
+
+- Designer
+- Blocks
+### 6.1. Designer
+
+Designer được dùng để tạo giao diện ứng dụng. Kéo các thành phần từ Palette sang Viewer, sau đó thay đổi cấu hình trong bảng Properties. Cấu trúc ứng dụng được thể hiện dưới dạng cây trong khu vực Components. 
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/13e23405-5b01-4bee-8caa-b238e7e6e58d" />
+
+| Khu vực | Chức năng |
+|----------|-----------|
+| Palette | Chứa các thành phần có thể kéo thả như Label, Button, TextBox, WebViewer |
+| Viewer | Mô phỏng giao diện điện thoại để sắp xếp thành phần |
+| Components | Hiển thị danh sách các thành phần đã thêm vào Screen |
+| Properties | Thay đổi thuộc tính của thành phần đang chọn |
+| Media | Tải lên và quản lý hình ảnh, âm thanh hoặc tệp cần dùng |
+
+Ví dụ:
+Kéo Button từ Palette sang Viewer
+
+→ Chọn Button trong Components
+
+→ Đổi Text trong Properties thành "TÍNH BMI"
+
+→ Đổi tên Button thành btnTinh
+
+#### 6.2. Tại sao cần đổi tên thành phần?
+
+Tên mặc định như:
+
+- Button1
+- Label3
+- TextBox2
+
+Sẽ khó hiểu khi tạo Blocks.
+
+Nên đổi thành:
+
+- btnTinh
+- lblKetQua
+- txtCanNang
+
+Nhờ đó, khi đọc Blocks, sẽ biết ngay thành phần có chức năng gì.
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/190ad2dd-f581-48bc-8568-f3077129c0bc" />
+
+### 6.3. Vai trò của Properties
+
+Properties dùng để thay đổi giao diện và hành vi ban đầu của một thành phần.
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/36aa0a36-102a-4c05-9df8-fe2c0664bdbd" />
+
+Ví dụ:
+
+| Thuộc tính | Ý nghĩa |
+|------------|----------|
+| Text | Nội dung hiển thị |
+| FontSize | Kích thước chữ |
+| Width | Chiều rộng |
+| Height | Chiều cao |
+| Hint | Văn bản hướng dẫn trong ô nhập |
+| NumbersOnly | Hạn chế bàn phím nhập dữ liệu số |
+| HomeUrl | Trang web được mở ban đầu trong WebViewer |
+
+
+## 7. Bản chất của việc kéo thả Blocks
+
+Trong MIT App Inventor, Blocks đóng vai trò giống như các câu lệnh trong lập trình truyền thống. Thay vì tự gõ code, người lập trình kéo các khối lệnh và ghép chúng lại theo logic mong muốn. MIT App Inventor mô tả quá trình này là sử dụng Blocks Editor để xác định hành vi của các thành phần. 
+
+## 8. Ưu điểm và nhược điểm của Blocks
+
+### 8.1. Ưu điểm
+
+| Ưu điểm | Giải thích |
+|----------|-----------|
+| Dễ tiếp cận | Không cần nhớ nhiều cú pháp |
+| Hạn chế lỗi cú pháp | Chỉ những Blocks phù hợp mới ghép được với nhau |
+| Dễ theo dõi logic | Có thể quan sát trực tiếp luồng xử lý |
+| Phù hợp với người mới học | Tập trung vào cách giải quyết bài toán |
+| Tạo ứng dụng nhanh | Thao tác kéo thả giúp rút ngắn thời gian xây dựng ứng dụng đơn giản |
+
+### 8.2. Nhược điểm
+
+| Nhược điểm | Giải thích |
+|------------|-----------|
+| Khó quản lý khi ứng dụng lớn | Khi có nhiều Blocks, màn hình làm việc trở nên rối |
+| Khả năng tùy chỉnh có giới hạn | Một số chức năng phức tạp khó triển khai hơn so với viết code |
+| Khó tái sử dụng ở dự án lớn | Việc tổ chức mã nguồn không linh hoạt như Java hoặc Kotlin |
+| Không phù hợp với ứng dụng chuyên nghiệp quá phức tạp | Các dự án lớn thường cần công cụ lập trình đầy đủ hơn |
+
+## 9. Sao chép Blocks bằng Backpack
+
+Backpack là công cụ dùng để lưu tạm và sao chép Blocks giữa các Screen hoặc giữa các Project. Tài liệu chính thức mô tả Backpack là chức năng copy và paste Blocks sang Screen hoặc Project khác. 
+Cách sử dụng:
+
+- Bước 1: Chuyển sang tab Blocks
+- Bước 2: Kéo nhóm Blocks cần sao chép vào biểu tượng Backpack
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/69004313-1db6-4e6d-a577-af272688f751" />
+
+- Bước 3: Mở Screen hoặc Project đích
+- Bước 4: Mở Backpack
+- Bước 5: Kéo Blocks từ Backpack ra vùng làm việc
+
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1b635c7-13ab-4461-b421-481e6ba21df1" />
 
 
 
