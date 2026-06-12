@@ -102,11 +102,11 @@ APP2 (android studio):  tạo app tương đương với Mit App inventor
     1 trang web https://k58kmt.tdh.io.vn?masv=mã sv của bạn
 # BÀI LÀM
 
-## 1. Bài toán cần giải quyết
+##  Bài toán cần giải quyết
 
 Tính chỉ số BMI
 
-## 2. Tạo dự án
+## 1. Tạo dự án
 
 Truy cập MIT App Inventor, đăng nhập và chọn: ```New project```
 
