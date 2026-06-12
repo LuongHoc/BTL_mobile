@@ -3119,6 +3119,32 @@ Sau khi WebView tải trang, số lượt truy cập trong `SV LOG` tăng lên.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8433805c-39aa-49cf-941d-7c78728e9a36" />
 
+# 11. Kết quả đạt được
+
+## 11.1. Chức năng đã hoàn thành
+
+Ứng dụng đã đáp ứng các yêu cầu:
+
+- Có 3 Activity.
+- `MainActivity` giới thiệu ứng dụng và điều hướng.
+- `BmiActivity` kiểm tra dữ liệu, tính BMI và phân loại kết quả.
+- Kết quả BMI được gửi lên API bằng phương thức `POST`.
+- `WebViewActivity` hiển thị trang web theo mã sinh viên bằng phương thức `GET`.
+- `JSON LOG` ghi nhận dữ liệu đã gửi.
+- `SV LOG` tăng khi truy cập trang WebView.
+- Project build thành công và chạy được trên máy ảo Android.
+
+## 11.2. Kết luận
+
+Qua bài thực hành, em đã xây dựng được một ứng dụng Android hoàn chỉnh bằng Java và XML, biết cách:
+
+- Tổ chức nhiều Activity.
+- Thiết kế giao diện bằng XML.
+- Sử dụng tài nguyên chuỗi trong `strings.xml`.
+- Xử lý sự kiện Button.
+- Gửi JSON lên API.
+- Hiển thị trang web bằng `WebView`.
+- Build và kiểm thử ứng dụng trên Android Emulator.
 
 
 
