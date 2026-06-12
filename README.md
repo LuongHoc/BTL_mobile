@@ -3,95 +3,59 @@
 # MÔN HỌC: PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG - TEE0419
 
 # BÀI TẬP LỚN:
-
-# Phần 1. Viết phần mềm trên công cụ Mit App inventor
-
+```
+1. Viết phần mềm trên công cụ Mit App inventor
    (tập trung vào quy trình tạo ra phần mềm)
-   
    app có 3 screen:
-   
    + about về bản thân+nút gọi sang 2 screen còn lại
    + giải 1 bài toán đơn giản
    + sử dụng webview: hiển thị 1 trang web có sẵn, hỗ trợ giao diện điện thoại
-
    mô tả: thanh công cụ có gì? kéo thả + thay đổi thuộc tính: làm ntn, để làm gì?
-   
-   block: mô tả bản chất việc kéo thả block ntn?
+          block: mô tả bản chất việc kéo thả block ntn?
                  ưu điểm gì so với viết code? nhược điểm?
                  copy paste block ? (backpack)
-
-# Phần 2. Viết app sử dụng Android Studio
+2. Viết app sử dụng Android Studio
    + Android manifest.xml  => mô tả gì? app cần quyền để do-st: khai báo ntn? để làm gì?
    + vòng đời của 1 ứng dụng android.
-
      code tự sinh sau khi tạo 1 project: có sẵn hàm onCreate: tại sao???
-     
-   + Code: java language.
-
-     app cần check xem có quyền để do-st? : code như thế nào? ý nghĩa?
-     
+   + Code: java language. 
+     app cần check xem có quyền để do-st? : code ntn? ý nghĩa?
      giao diện: (res/layout) mô tả bằng file XML + UI Design review
-     
         + thuộc tính text, hoặc các thuộc tính khác: giá trị hardcode => lưu vào nới khác, tham chiếu tới nó:
-        + 
           cú pháp của việc tham chiếu là gì?
-          
           ưu điểm của việc tham chiếu này?
-          
           OS hỗ trợ auto việc lấy giá trị tham chiếu theo LOCATION, LANGUAGE, THEME
-          
-          việc hỗ trợ auto này giúp app làm được điều gì?
-          
+          việc hỗ trợ auto này giúp app làm được điều gì?	
         + đối tượng chứa: gộp các đối tượng con lại: cùng 1 quy luật sắp xếp để hiển thị 
           các đối tượng con nằm kề nhau theo chiều dọc | hoặc ngang, gravity
-          
      code tương tác với layout: vd hiển thị text
-     
           mong muốn text hiển thị phù hợp với thiết lập LOCATION, LANGUAGE, THEME của người dùng
           thì làm ntn? (tránh hardcode)
-     
      event (sự kiện) người dùng tác động vào app: CLICK vào button, click vào text,...
-     
-          với 1 sự kiện nào đó, muốn chạy 1 đoạn code để do-st thì LAYTOUT cần làm gì?
-     
+          với 1 sự kiện nào đó, muốn chạy 1 đoạn code để do-st
+          thì LAYTOUT cần làm gì?
               CODE viết như nào (2 cách)
 ---------------------------
      trong app có các thư mục đặc biệt: Assets
-     
      khi sử dụng Window Explorer để copy các files + folder vào trong Assets
-     
      thì khi compiler: mọi file này đều đi theo app, nằm trong app
-     
      trong app có thể truy cập được đến các file này
-     
      cú pháp truy cập vào là gì?
-     
      lợi ích của việc app có sẵn các files (offline cũng có)?
-     
      ứng dụng: app hướng dẫn việc X
 
 ==> tạo app1 sử dụng cơ chế Dữ liệu chuẩn bị trước trong Assets
-
          format dữ liệu: tuỳ ý, nội dung tuỳ ý
-         
          công cụ để hiển thị dữ liệu: tuỳ ý
-         
          có cần phải tiền xử lý trước khi hiển thị ko: tuỳ ý.
-         
-         Sinh viên TỰ ĐẶT RA VẤN ĐỀ => TỰ GIẢI QUYẾT VẤN ĐỀ
-         
+         SV TỰ ĐẶT RA VẤN ĐỀ => TỰ GIẢI QUYẾT VẤN ĐỀ
          MÔ TẢ ĐƯỢC DỮ LIỆU CÓ ĐẶC THÙ GÌ
-         
                     DÙNG THUẬT TOÁN NÀO ĐỂ XỬ LÝ DỮ LIỆU (NẾU CẦN)
-                    
                     DÙNG ĐỐI TƯỢNG NÀO ĐỂ HIỂN THỊ DỮ LIỆU.
-                    
                     (ĐỘ SÁNG TẠO LÀ KO GIỚI HẠN)
 ------------------------
 APP2 (android studio):  tạo app tương đương với Mit App inventor
-
   app có 3 activity
-  
   + activity1: about: about+nút gọi sang 2 activity còn lại
   + activity2: giải toán đơn giản (tuỳ ý). mỗi khi giải xong bài toán: gọi api tại https://k58kmt.tdh.io.vn/api
     để gửi bài toán lên đó
@@ -100,6 +64,8 @@ APP2 (android studio):  tạo app tương đương với Mit App inventor
   + activity3: 
     dùng web-view để truy cập từ 
     1 trang web https://k58kmt.tdh.io.vn?masv=mã sv của bạn
+```
+---
 # BÀI LÀM
 
 ##  Bài toán cần giải quyết
@@ -777,250 +743,47 @@ Cách sử dụng:
 
 <img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1b635c7-13ab-4461-b421-481e6ba21df1" />
 
-
-
-
-
-
-
-
-# Phần 2. Viết app sử dụng Android Studio
-# A. Lý thuyết
-
-## 1. Tổng quan về Android Studio
-
-### 1.1. Android Studio là gì?
-
-Android Studio là môi trường phát triển tích hợp dùng để xây dựng ứng dụng Android. Công cụ này hỗ trợ lập trình, thiết kế giao diện, kiểm tra lỗi, build ứng dụng và chạy thử trên điện thoại thật hoặc máy ảo Android Emulator.
-
-Trong bài tập này, ứng dụng được viết bằng ngôn ngữ Java. Giao diện được mô tả bằng các file XML trong thư mục:
-
-```text
-app/src/main/res/layout
-```
-
-### 1.2. Các thành phần chính của một Project Android
-
-Một Project Android cơ bản có cấu trúc:
-
-```text
-app
-├── manifests
-│   └── AndroidManifest.xml
-├── java
-│   └── com.example.tenungdung
-│       └── MainActivity.java
-└── res
-    ├── layout
-    │   └── activity_main.xml
-    ├── drawable
-    ├── mipmap
-    └── values
-        ├── strings.xml
-        ├── colors.xml
-        └── themes.xml
-```
-
-Ý nghĩa của một số thư mục:
-
-| Thư mục hoặc file     | Ý nghĩa                                                      |
-| --------------------- | ------------------------------------------------------------ |
-| `AndroidManifest.xml` | Khai báo thông tin tổng quát, Activity và quyền của ứng dụng |
-| `java`                | Chứa code Java xử lý chức năng                               |
-| `res/layout`          | Chứa file XML mô tả giao diện                                |
-| `res/values`          | Chứa chuỗi, màu sắc và theme                                 |
-| `res/drawable`        | Chứa hình ảnh hoặc tài nguyên giao diện                      |
-| `assets`              | Chứa file dữ liệu đi kèm ứng dụng                            |
-
 ---
 
-## 2. File `AndroidManifest.xml`
+# Phần 2. Viết app sử dụng Android Studio
 
-### 2.1. Vai trò của `AndroidManifest.xml`
+# A. PHẦN LÝ THUYẾT ANDROID STUDIO
 
-`AndroidManifest.xml` là file khai báo thông tin quan trọng của ứng dụng Android. Hệ điều hành đọc file này để biết ứng dụng gồm những thành phần nào và cần sử dụng những quyền gì.
+## 1. File `AndroidManifest.xml`
 
-File Manifest thường được dùng để khai báo:
+`AndroidManifest.xml` là file khai báo thông tin quan trọng của ứng dụng Android, gồm:
 
-* Tên package của ứng dụng.
 * Các Activity.
-* Activity khởi động đầu tiên.
-* Quyền truy cập Internet, camera, vị trí hoặc bộ nhớ.
-* Icon, tên ứng dụng và theme.
-* Một số cấu hình liên quan đến hệ điều hành Android.
+* Activity khởi động.
+* Quyền truy cập.
+* Tên ứng dụng, icon và theme.
 
-### 2.2. Khai báo Activity
-
-Ví dụ:
-
-```xml
-<activity
-    android:name=".BmiActivity"
-    android:exported="false" />
-
-<activity
-    android:name=".MainActivity"
-    android:exported="true">
-
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-
-</activity>
-```
-
-Trong đó:
-
-| Thành phần                 | Ý nghĩa                                     |
-| -------------------------- | ------------------------------------------- |
-| `android:name`             | Tên class Activity                          |
-| `android:exported="false"` | Activity chỉ được mở từ bên trong ứng dụng  |
-| `MAIN`                     | Đánh dấu Activity khởi động chính           |
-| `LAUNCHER`                 | Cho phép mở Activity từ biểu tượng ứng dụng |
-
-### 2.3. Khai báo quyền truy cập
-
-Ứng dụng muốn sử dụng một số chức năng của thiết bị hoặc hệ điều hành phải khai báo quyền trong Manifest.
-
-Ví dụ, ứng dụng BMI cần Internet để gửi dữ liệu lên API và tải trang WebView:
+Ví dụ khai báo quyền Internet:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Hai dòng này phải đặt phía trên thẻ:
+Hai quyền trên giúp ứng dụng gửi dữ liệu lên API và tải nội dung từ Internet.
 
-```xml
-<application>
-```
 
-Ví dụ đầy đủ:
+## 2. Vòng đời của Activity
 
-```xml
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+Mỗi màn hình trong ứng dụng Android thường được xây dựng bằng một Activity.
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+Các hàm vòng đời chính:
 
-    <application
-        ... >
-    </application>
+| Hàm           | Ý nghĩa                        |
+| ------------- | ------------------------------ |
+| `onCreate()`  | Khởi tạo Activity và giao diện |
+| `onStart()`   | Activity bắt đầu hiển thị      |
+| `onResume()`  | Người dùng có thể tương tác    |
+| `onPause()`   | Activity tạm dừng              |
+| `onStop()`    | Activity không còn hiển thị    |
+| `onDestroy()` | Activity bị hủy                |
 
-</manifest>
-```
-
-### 2.4. Quyền thông thường và quyền nhạy cảm
-
-Không phải quyền nào cũng cần hỏi người dùng khi ứng dụng đang chạy.
-
-#### 2.4.1. Quyền thông thường
-
-Một số quyền chỉ cần khai báo trong Manifest. Hệ điều hành không hiển thị hộp thoại xin phép người dùng.
-
-Ví dụ:
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-```
-
-Ứng dụng BMI chỉ cần khai báo quyền Internet, không cần viết code xin quyền khi chạy.
-
-#### 2.4.2. Quyền nhạy cảm
-
-Các quyền liên quan đến dữ liệu cá nhân hoặc thiết bị nhạy cảm cần được kiểm tra và xin phép khi chạy ứng dụng.
-
-Ví dụ:
-
-```xml
-<uses-permission android:name="android.permission.CAMERA" />
-```
-
-Code Java kiểm tra quyền camera:
-
-```java
-if (ContextCompat.checkSelfPermission(
-        this,
-        Manifest.permission.CAMERA
-) != PackageManager.PERMISSION_GRANTED) {
-
-    ActivityCompat.requestPermissions(
-            this,
-            new String[]{Manifest.permission.CAMERA},
-            100
-    );
-}
-```
-
-Ý nghĩa:
-
-```text
-Kiểm tra quyền camera
-→ Nếu chưa được cấp
-→ Hiển thị hộp thoại xin quyền
-```
-
----
-
-## 3. Vòng đời của Activity
-
-### 3.1. Activity là gì?
-
-Activity thường đại diện cho một màn hình của ứng dụng Android.
-
-Ví dụ trong ứng dụng BMI:
-
-| Activity          | Màn hình               |
-| ----------------- | ---------------------- |
-| `MainActivity`    | Màn hình giới thiệu    |
-| `BmiActivity`     | Màn hình tính BMI      |
-| `WebViewActivity` | Màn hình xem trang web |
-
-### 3.2. Các trạng thái vòng đời chính
-
-Một Activity không chạy liên tục từ đầu đến cuối. Hệ điều hành Android quản lý Activity thông qua các hàm vòng đời.
-
-Các hàm quan trọng:
-
-| Hàm           | Thời điểm được gọi                    | Mục đích thường dùng               |
-| ------------- | ------------------------------------- | ---------------------------------- |
-| `onCreate()`  | Activity vừa được tạo                 | Khởi tạo giao diện và biến         |
-| `onStart()`   | Activity bắt đầu hiển thị             | Chuẩn bị tài nguyên                |
-| `onResume()`  | Activity sẵn sàng tương tác           | Tiếp tục thao tác đang tạm dừng    |
-| `onPause()`   | Activity mất một phần quyền tương tác | Lưu trạng thái tạm thời            |
-| `onStop()`    | Activity không còn hiển thị           | Dừng các công việc không cần thiết |
-| `onDestroy()` | Activity bị hủy                       | Giải phóng tài nguyên              |
-
-Sơ đồ đơn giản:
-
-```text
-onCreate()
-    ↓
-onStart()
-    ↓
-onResume()
-    ↓
-Người dùng tương tác với ứng dụng
-    ↓
-onPause()
-    ↓
-onStop()
-    ↓
-onDestroy()
-```
-
-Nếu người dùng quay lại một Activity đã dừng, Android có thể gọi:
-
-```text
-onRestart()
-→ onStart()
-→ onResume()
-```
-
-### 3.3. Tại sao code tự sinh có hàm `onCreate()`?
-
-Khi tạo một Project hoặc Activity mới, Android Studio tự sinh code gần giống:
+Khi tạo Activity mới, Android Studio tự sinh hàm:
 
 ```java
 @Override
@@ -1030,51 +793,17 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-Lý do là `onCreate()` được gọi khi hệ điều hành tạo Activity. Đây là vị trí phù hợp để:
+Hàm `onCreate()` được dùng để gắn giao diện XML, khởi tạo biến và xử lý sự kiện.
 
-* Gắn file XML vào Activity.
-* Tìm các View theo ID.
-* Khởi tạo biến.
-* Đăng ký sự kiện click.
-* Chuẩn bị dữ liệu ban đầu.
+## 3. Thiết kế giao diện bằng XML
 
-Dòng:
-
-```java
-setContentView(R.layout.activity_main);
-```
-
-có nghĩa là Activity sử dụng giao diện nằm trong file:
+Giao diện được mô tả trong thư mục:
 
 ```text
-res/layout/activity_main.xml
+res/layout
 ```
 
----
-
-## 4. Thiết kế giao diện bằng XML
-
-### 4.1. Vai trò của thư mục `res/layout`
-
-Giao diện ứng dụng thường được khai báo trong các file XML thuộc thư mục:
-
-```text
-app/src/main/res/layout
-```
-
-Ví dụ:
-
-```text
-activity_main.xml
-activity_bmi.xml
-activity_web_view.xml
-```
-
-File XML giúp tách phần giao diện khỏi code xử lý Java.
-
-### 4.2. Các thành phần giao diện cơ bản
-
-Ví dụ một nút bấm:
+Ví dụ một Button:
 
 ```xml
 <Button
@@ -1084,592 +813,161 @@ Ví dụ một nút bấm:
     android:text="@string/btn_calculate" />
 ```
 
-Ý nghĩa:
+Một số thuộc tính thường dùng:
 
-| Thuộc tính      | Ý nghĩa                                      |
-| --------------- | -------------------------------------------- |
-| `android:id`    | Định danh thành phần để Java có thể tìm thấy |
-| `layout_width`  | Chiều rộng của thành phần                    |
-| `layout_height` | Chiều cao của thành phần                     |
-| `android:text`  | Nội dung hiển thị                            |
-| `match_parent`  | Kích thước bằng thành phần cha               |
-| `wrap_content`  | Kích thước vừa đủ nội dung                   |
+| Thuộc tính        | Ý nghĩa              |
+| ----------------- | -------------------- |
+| `android:id`      | Định danh thành phần |
+| `layout_width`    | Chiều rộng           |
+| `layout_height`   | Chiều cao            |
+| `android:text`    | Nội dung hiển thị    |
+| `android:gravity` | Căn chỉnh nội dung   |
 
-### 4.3. Design, Code và Split
 
-Android Studio hỗ trợ ba chế độ chỉnh sửa layout:
+## 4. Sử dụng tài nguyên tham chiếu
 
-| Chế độ   | Chức năng                    |
-| -------- | ---------------------------- |
-| `Code`   | Viết XML trực tiếp           |
-| `Design` | Thiết kế giao diện trực quan |
-| `Split`  | Vừa xem XML vừa xem Preview  |
+Không nên ghi trực tiếp nội dung vào layout vì sẽ gây hardcode.
 
-Người lập trình có thể kéo thả thành phần trong giao diện Design hoặc sửa trực tiếp code XML.
-
----
-
-## 5. Đối tượng chứa và cách sắp xếp giao diện
-
-### 5.1. View và ViewGroup
-
-Các thành phần giao diện như `TextView`, `Button`, `EditText` được gọi là `View`.
-
-Các đối tượng chứa nhiều View con được gọi là `ViewGroup`.
-
-Ví dụ:
-
-```text
-LinearLayout
-ScrollView
-ConstraintLayout
-```
-
-### 5.2. `LinearLayout`
-
-`LinearLayout` sắp xếp các View con theo một chiều nhất định.
-
-Ví dụ sắp xếp theo chiều dọc:
-
-```xml
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-</LinearLayout>
-```
-
-Giá trị:
-
-```xml
-android:orientation="vertical"
-```
-
-có nghĩa là các thành phần được xếp từ trên xuống dưới.
-
-Nếu sử dụng:
-
-```xml
-android:orientation="horizontal"
-```
-
-các thành phần được xếp từ trái sang phải.
-
-### 5.3. Thuộc tính `gravity`
-
-Thuộc tính `gravity` dùng để căn nội dung bên trong đối tượng chứa.
-
-Ví dụ:
-
-```xml
-android:gravity="center"
-```
-
-Nội dung được căn giữa.
-
-Một số giá trị thường dùng:
-
-| Giá trị             | Ý nghĩa                   |
-| ------------------- | ------------------------- |
-| `center`            | Căn giữa                  |
-| `center_horizontal` | Căn giữa theo chiều ngang |
-| `center_vertical`   | Căn giữa theo chiều dọc   |
-| `start`             | Căn về đầu                |
-| `end`               | Căn về cuối               |
-
-### 5.4. `ScrollView`
-
-`ScrollView` cho phép cuộn màn hình khi nội dung dài hơn kích thước điện thoại.
-
-Ví dụ:
-
-```xml
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    </LinearLayout>
-
-</ScrollView>
-```
-
----
-
-## 6. Tránh hardcode bằng tài nguyên tham chiếu
-
-### 6.1. Hardcode là gì?
-
-Hardcode là ghi trực tiếp nội dung vào layout hoặc code Java.
-
-Ví dụ:
+Ví dụ không nên dùng:
 
 ```xml
 android:text="TÍNH BMI"
 ```
 
-Cách này vẫn chạy được nhưng khó quản lý khi ứng dụng có nhiều màn hình hoặc cần hỗ trợ nhiều ngôn ngữ.
-
-### 6.2. Lưu chuỗi trong `strings.xml`
-
-Nên lưu nội dung vào:
+Nên khai báo trong file:
 
 ```text
 res/values/strings.xml
 ```
 
-Ví dụ:
-
 ```xml
-<resources>
-    <string name="btn_calculate">TÍNH BMI</string>
-</resources>
+<string name="btn_calculate">TÍNH BMI</string>
 ```
 
-Sau đó tham chiếu từ layout:
+Sau đó tham chiếu:
 
 ```xml
 android:text="@string/btn_calculate"
 ```
 
-### 6.3. Ưu điểm của tài nguyên tham chiếu
+Cách này giúp dễ sửa nội dung và hỗ trợ nhiều ngôn ngữ, giao diện sáng tối hoặc cấu hình thiết bị khác nhau.
 
-Sử dụng tài nguyên tham chiếu có các lợi ích:
 
-* Tránh lặp lại nội dung trong nhiều file.
-* Dễ sửa nội dung.
-* Hỗ trợ nhiều ngôn ngữ.
-* Hỗ trợ các cấu hình màn hình khác nhau.
-* Hỗ trợ giao diện sáng và tối.
-* Giúp code dễ đọc và dễ bảo trì.
+## 5. Đối tượng chứa giao diện
 
-### 6.4. Hệ điều hành tự chọn tài nguyên phù hợp
+`LinearLayout` dùng để sắp xếp các thành phần theo một chiều.
 
-Android có thể tự động chọn tài nguyên dựa trên cấu hình thiết bị.
+Sắp xếp theo chiều dọc:
 
-Ví dụ hỗ trợ tiếng Việt:
-
-```text
-res/values/strings.xml
-res/values-vi/strings.xml
+```xml
+android:orientation="vertical"
 ```
 
-Ví dụ hỗ trợ giao diện ban đêm:
+Sắp xếp theo chiều ngang:
 
-```text
-res/values/colors.xml
-res/values-night/colors.xml
+```xml
+android:orientation="horizontal"
 ```
 
-Ví dụ hỗ trợ giao diện khi xoay ngang:
+Căn giữa nội dung:
 
-```text
-res/layout/activity_main.xml
-res/layout-land/activity_main.xml
+```xml
+android:gravity="center"
 ```
 
-Khi người dùng thay đổi ngôn ngữ, chế độ sáng tối hoặc hướng màn hình, hệ điều hành lựa chọn tài nguyên phù hợp.
 
----
-
-## 7. Tương tác giữa code Java và layout
-
-### 7.1. Gắn layout vào Activity
-
-Trong `onCreate()`, sử dụng:
-
-```java
-setContentView(R.layout.activity_bmi);
-```
-
-Dòng này gắn file:
-
-```text
-activity_bmi.xml
-```
-
-vào `BmiActivity`.
-
-### 7.2. Tìm thành phần giao diện theo ID
+## 6. Code Java tương tác với giao diện
 
 Trong XML:
 
 ```xml
-<EditText
-    android:id="@+id/edtWeight"
-    ... />
-```
-
-Trong Java:
-
-```java
-EditText edtWeight = findViewById(R.id.edtWeight);
-```
-
-Sau đó có thể lấy dữ liệu:
-
-```java
-String weightText = edtWeight.getText().toString();
-```
-
-### 7.3. Hiển thị nội dung lên giao diện
-
-Trong XML:
-
-```xml
-<TextView
-    android:id="@+id/tvResult"
-    ... />
-```
-
-Trong Java:
-
-```java
-TextView tvResult = findViewById(R.id.tvResult);
-tvResult.setText("Kết quả");
-```
-
-Tuy nhiên, để tránh hardcode, nên dùng:
-
-```java
-tvResult.setText(R.string.evaluation_normal);
-```
-
-Hoặc:
-
-```java
-String message = getString(R.string.bmi_result_format, bmi);
-tvResult.setText(message);
-```
-
-### 7.4. Ý nghĩa của `R`
-
-Android tự sinh class `R` để tham chiếu tới tài nguyên.
-
-Ví dụ:
-
-```java
-R.layout.activity_main
-R.id.btnCalculate
-R.string.btn_calculate
-```
-
-Ý nghĩa:
-
-| Cú pháp                  | Tài nguyên                |
-| ------------------------ | ------------------------- |
-| `R.layout.activity_main` | File layout               |
-| `R.id.btnCalculate`      | ID của một View           |
-| `R.string.btn_calculate` | Chuỗi trong `strings.xml` |
-
----
-
-## 8. Xử lý sự kiện người dùng
-
-### 8.1. Sự kiện là gì?
-
-Sự kiện là hành động của người dùng đối với ứng dụng.
-
-Ví dụ:
-
-* Bấm Button.
-* Chạm vào TextView.
-* Nhập dữ liệu.
-* Chọn một mục.
-* Vuốt màn hình.
-
-Khi một sự kiện xảy ra, ứng dụng có thể chạy một đoạn code tương ứng.
-
-### 8.2. Cách 1: Dùng `setOnClickListener()`
-
-Đây là cách được sử dụng trong ứng dụng BMI.
-
-Trong XML, Button cần có ID:
-
-```xml
-<Button
-    android:id="@+id/btnCalculate"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/btn_calculate" />
+android:id="@+id/btnCalculate"
 ```
 
 Trong Java:
 
 ```java
 Button btnCalculate = findViewById(R.id.btnCalculate);
+```
 
+Hiển thị nội dung lên `TextView`:
+
+```java
+tvResult.setText(R.string.evaluation_normal);
+```
+
+Hoặc lấy chuỗi có tham số:
+
+```java
+tvResult.setText(getString(R.string.bmi_result_format, bmi));
+```
+
+
+## 7. Xử lý sự kiện
+
+### 7.1. Cách 1: Dùng `setOnClickListener()`
+
+```java
 btnCalculate.setOnClickListener(v -> {
     calculateBmi();
 });
 ```
 
-Ý nghĩa:
-
-```text
-Khi người dùng bấm btnCalculate
-→ Chạy hàm calculateBmi()
-```
-
-### 8.3. Cách 2: Khai báo `android:onClick` trong XML
+### 7.2. Cách 2: Khai báo trong XML
 
 Trong XML:
 
 ```xml
-<Button
-    android:id="@+id/btnCalculate"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/btn_calculate"
-    android:onClick="calculateBmiFromXml" />
+android:onClick="calculateBmi"
 ```
 
 Trong Java:
 
 ```java
-public void calculateBmiFromXml(View view) {
-    // Viết code xử lý tại đây
+public void calculateBmi(View view) {
+    // Code xử lý
 }
 ```
 
-Khi người dùng bấm nút, Android gọi hàm:
+Trong ứng dụng BMI, sử dụng `setOnClickListener()` để dễ quản lý code.
+
+
+## 8. Thư mục `assets`
+
+Thư mục `assets` dùng để lưu các file đi kèm ứng dụng như:
+
+```text
+TXT
+JSON
+HTML
+Hình ảnh
+```
+
+File trong `assets` được đóng gói cùng ứng dụng và có thể sử dụng khi không có Internet.
+
+Ví dụ đọc file:
 
 ```java
-calculateBmiFromXml()
+InputStream inputStream = getAssets().open("data.json");
 ```
 
-### 8.4. So sánh hai cách xử lý sự kiện
-
-| Cách                   | Ưu điểm                            | Hạn chế                          |
-| ---------------------- | ---------------------------------- | -------------------------------- |
-| `setOnClickListener()` | Linh hoạt, dễ kiểm soát trong Java | Code dài hơn một chút            |
-| `android:onClick`      | Khai báo nhanh trong XML           | Khó quản lý hơn khi ứng dụng lớn |
-
-Trong ứng dụng BMI, sử dụng:
-
-```java
-setOnClickListener()
-```
-
-giúp tập trung phần xử lý sự kiện trong code Java.
-
----
-
-## 9. Thư mục `assets`
-
-### 9.1. Vai trò của `assets`
-
-`assets` là thư mục đặc biệt dùng để chứa các file dữ liệu đi kèm ứng dụng.
-
-Ví dụ:
-
-```text
-app/src/main/assets
-├── huong_dan_bmi.json
-├── gioi_thieu.txt
-├── index.html
-└── images
-    └── bmi_chart.png
-```
-
-Các file trong `assets` được đóng gói cùng ứng dụng khi build.
-
-### 9.2. Tạo thư mục `assets`
-
-Trong Android Studio:
-
-```text
-Nhấp chuột phải vào app/src/main
-→ New
-→ Folder
-→ Assets Folder
-```
-
-Sau đó copy file dữ liệu vào thư mục:
-
-```text
-app/src/main/assets
-```
-
-### 9.3. Đọc file từ `assets` bằng Java
-
-Ví dụ đọc file văn bản:
-
-```java
-InputStream inputStream =
-        getAssets().open("gioi_thieu.txt");
-
-BufferedReader reader =
-        new BufferedReader(
-                new InputStreamReader(inputStream)
-        );
-
-StringBuilder builder = new StringBuilder();
-String line;
-
-while ((line = reader.readLine()) != null) {
-    builder.append(line).append("\n");
-}
-
-reader.close();
-
-String content = builder.toString();
-```
-
-### 9.4. Đọc file trong thư mục con
-
-Nếu file nằm trong:
-
-```text
-assets/data/huong_dan_bmi.json
-```
-
-thì cú pháp:
-
-```java
-getAssets().open("data/huong_dan_bmi.json");
-```
-
-### 9.5. Truy cập file HTML trong WebView
-
-Nếu file nằm trong:
-
-```text
-assets/index.html
-```
-
-có thể hiển thị bằng:
+Ví dụ mở file HTML offline bằng WebView:
 
 ```java
 webView.loadUrl("file:///android_asset/index.html");
 ```
 
-### 9.6. Lợi ích của dữ liệu trong `assets`
 
-Dữ liệu trong `assets` có các ưu điểm:
+## 9. Kết luận
 
-* Được đóng gói cùng ứng dụng.
-* Có thể sử dụng khi không có Internet.
-* Phù hợp với tài liệu hướng dẫn offline.
-* Có thể lưu file JSON, TXT, HTML hoặc hình ảnh.
-* Giữ nguyên cấu trúc thư mục con.
-* Dễ sử dụng cho dữ liệu chuẩn bị trước.
-
-### 9.7. Hạn chế
-
-Một số hạn chế:
-
-* Làm tăng kích thước ứng dụng.
-* Muốn cập nhật dữ liệu phải build và phát hành lại app.
-* Không phù hợp với dữ liệu thay đổi thường xuyên.
-
----
-
-## 10. Liên hệ với ứng dụng BMI đã xây dựng
-
-### 10.1. Sử dụng `AndroidManifest.xml`
-
-Ứng dụng BMI khai báo:
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
-
-để gửi JSON lên API và tải nội dung WebView.
-
-### 10.2. Sử dụng `onCreate()`
-
-Trong mỗi Activity, `onCreate()` được dùng để:
-
-* Gắn layout.
-* Tìm View theo ID.
-* Khởi tạo Button.
-* Đăng ký sự kiện click.
-* Tải trang WebView.
-
-### 10.3. Sử dụng XML
-
-Ứng dụng có 3 file layout:
-
-```text
-activity_main.xml
-activity_bmi.xml
-activity_web_view.xml
-```
-
-### 10.4. Sử dụng tài nguyên chuỗi
-
-Nội dung được lưu trong:
-
-```text
-res/values/strings.xml
-```
-
-và tham chiếu bằng:
-
-```xml
-@string/ten_tai_nguyen
-```
-
-### 10.5. Xử lý sự kiện
-
-Các nút được xử lý bằng:
-
-```java
-setOnClickListener()
-```
-
-Ví dụ:
-
-```java
-btnReset.setOnClickListener(v -> resetForm());
-btnBack.setOnClickListener(v -> finish());
-```
-
-### 10.6. Gửi dữ liệu lên API
-
-Sau khi tính BMI, ứng dụng gửi JSON bằng phương thức:
-
-```text
-POST
-```
-
-tới:
-
-```text
-https://k58kmt.tdh.io.vn/api/
-```
-
-### 10.7. Hiển thị WebView
-
-Ứng dụng tải trang:
-
-```text
-https://k58kmt.tdh.io.vn/?masv=K225480106025
-```
-
-bằng:
-
-```java
-webView.loadUrl(WEB_URL);
-```
-
----
-
-## 11. Kết luận
-
-Qua phần lý thuyết, có thể thấy một ứng dụng Android gồm nhiều thành phần phối hợp với nhau:
+Android Studio cho phép xây dựng ứng dụng Android bằng Java và XML. Các thành phần chính gồm:
 
 ```text
 AndroidManifest.xml
 → Khai báo Activity và quyền
 
 XML Layout
-→ Mô tả giao diện
+→ Thiết kế giao diện
 
 strings.xml
 → Quản lý nội dung hiển thị
@@ -1678,12 +976,11 @@ Java Activity
 → Xử lý chức năng và sự kiện
 
 assets
-→ Lưu dữ liệu chuẩn bị trước để sử dụng offline
+→ Lưu dữ liệu offline
 ```
 
-Việc tách riêng giao diện, tài nguyên và code xử lý giúp ứng dụng rõ ràng, dễ bảo trì và dễ mở rộng.
 
-
+---
 # B. Thực hành
 
 # 1. Giới thiệu
